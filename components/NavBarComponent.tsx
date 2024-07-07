@@ -60,7 +60,7 @@ const NavBarComponent = (props: Props) => {
               className={
                 pathname === data.link
                   ? `text-[20px] font-recSemiBold text-recAccent`
-                  : `text-[20px] font-recRegular text-recSubtle`
+                  : `text-[20px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recAccent transition transform duration-400`
               }
             >
               <Link href={data.link}>{data.name}</Link>
