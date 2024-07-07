@@ -27,7 +27,7 @@ const NavBarComponent = (props: Props) => {
 
   return (
     <nav
-      className={`px-20 h-32 flex items-center justify-between ${
+      className={`dark:bg-[#000611] bg-recLight z-[100] px-20 h-32 flex items-center justify-between sticky top-0 ${
         scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
       }`}
     >
@@ -60,7 +60,7 @@ const NavBarComponent = (props: Props) => {
               className={
                 pathname === data.link
                   ? `text-[20px] font-recSemiBold text-recAccent`
-                  : `text-[20px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recAccent transition transform duration-400`
+                  : `text-[20px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
               }
             >
               <Link href={data.link}>{data.name}</Link>
