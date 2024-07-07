@@ -9,7 +9,7 @@ type Props = {
 
 const ButtonComponent = (props: Props) => {
   return (
-    <Button className={`flex items-center justify-center gap-1 ${props.className}`}>
+    <Button className={`flex items-center justify-center gap-2 ${props.className}`}>
       <span>{props.btnText}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
