@@ -1,4 +1,5 @@
 import { CategoryDataInterface } from "./interfaces/CategoryDataInterface";
+import { JobDataInterface } from "./interfaces/JobDataInterface";
 import { NavDataInterface } from "./interfaces/NavDataInterface";
 
 export const navData: Array<NavDataInterface> = [
@@ -57,4 +58,88 @@ export const categoryData: Array<CategoryDataInterface> = [
         backgroundColor: "#E4F0FE",
         textContent: "Services"
     }
+]
+
+export const jobData: Array<JobDataInterface> = [
+    {
+        type: "Temporary",
+        timePosted: "2 days ago",
+        job: "Project Manager",
+        salaryRange: "N200,000 - N300,000",
+        location: "Lagos, Nigeria",
+        jobLocation: "Lagos, Nigeria",
+        sideColor: "#2563EB"
+    },
+    {
+        type: "Permanent",
+        timePosted: "1 days ago",
+        job: "Product/UI/UX Designer",
+        salaryRange: "N350,000 - N500,000",
+        location: "Houston, TX",
+        jobLocation: "Abuja, Nigeria",
+        sideColor: "#FF6BA5"
+    },
+    {
+        type: "Temporary",
+        timePosted: "2 days ago",
+        job: "Product Manager",
+        salaryRange: "N1,500,000 - N2,000,000",
+        location: "Lagos, Nigeria",
+        jobLocation: "Lagos, Nigeria",
+        sideColor: "#F4B608"
+    },
+    {
+        type: "Permanent",
+        timePosted: "35 mins ago",
+        job: "Full Stack Developer",
+        salaryRange: "N1,200,000 - N1,300,000",
+        location: "Abuja, Nigeria",
+        jobLocation: "Remote",
+        sideColor: "#CD71DC"
+    },
+    {
+        type: "Temporary",
+        timePosted: "3 days ago",
+        job: "DevOps Engineer",
+        salaryRange: "N2,000,000 - N3,500,000",
+        location: "Remote",
+        jobLocation: "Remote",
+        sideColor: "#1ED760"
+    },
+    {
+        type: "Permanent",
+        timePosted: "1 week ago",
+        job: "AI/Backend Developer",
+        salaryRange: "N750,000 - N900,000",
+        location: "Remote",
+        jobLocation: "Remote",
+        sideColor: "#FF6900"
+    },
+    {
+        type: "Temporary",
+        timePosted: "5 days ago",
+        job: "Copywriter",
+        salaryRange: "N250,000 - N350,000",
+        location: "Lagos, Nigeria",
+        jobLocation: "Lagos, Nigeria",
+        sideColor: "#770202"
+    },
+    {
+        type: "Permanent",
+        timePosted: "2 weeks ago",
+        job: "Marketing Manager",
+        salaryRange: "N200,000 - N300,000",
+        location: "Lagos, Nigeria",
+        jobLocation: "Lagos, Nigeria",
+        sideColor: "#1699D1"
+    },
+    {
+        type: "Temporary",
+        timePosted: "2 days ago",
+        job: "Frontend Developer",
+        salaryRange: "N600,000 - N750,000",
+        location: "Remote",
+        jobLocation: "Lagos, Nigeria",
+        sideColor: "#C08BF5"
+    },
 ]
