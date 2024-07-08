@@ -15,7 +15,7 @@ const JobsComponent = (props: Props) => {
       {/* Latest Job Displayed */}
       <div className='grid grid-cols-3 gap-5 pb-[60px]'>
         {jobData.map((job: JobDataInterface, index: number) => (
-          <div key={index} className='p-5 rounded-[20px] border border-recSubtle dark:border-[#242424] border-l-[8px]' style={{borderLeftColor: job.sideColor}}>
+          <div key={index} className='p-5 rounded-[20px] border border-recSubtle dark:border-[#242424] border-l-[8px] cursor-pointer' style={{borderLeftColor: job.sideColor}}>
             <div className='flex items-center justify-between text-textSmall font-recMedium pb-8'>
               <span>Type: {job.type}</span>
               <span className='text-recSubtle'>{job.timePosted}</span>
