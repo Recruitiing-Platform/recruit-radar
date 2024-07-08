@@ -1,6 +1,7 @@
 import { CategoryDataInterface } from './interfaces/CategoryDataInterface';
 import { ChooseDataInterface } from './interfaces/ChooseDataInterface';
 import { JobDataInterface } from './interfaces/JobDataInterface';
+import { LinkDataInterface } from './interfaces/LinkDataInterface';
 import { NavDataInterface } from './interfaces/NavDataInterface';
 
 export const navData: Array<NavDataInterface> = [
@@ -161,6 +162,51 @@ export const chooseData: Array<ChooseDataInterface> = [
   },
   {
     path: 'M28 25H27V5C27 4.73478 26.8946 4.48043 26.7071 4.29289C26.5196 4.10536 26.2652 4 26 4H19C18.7348 4 18.4804 4.10536 18.2929 4.29289C18.1054 4.48043 18 4.73478 18 5V10H12C11.7348 10 11.4804 10.1054 11.2929 10.2929C11.1054 10.4804 11 10.7348 11 11V16H6C5.73478 16 5.48043 16.1054 5.29289 16.2929C5.10536 16.4804 5 16.7348 5 17V25H4C3.73478 25 3.48043 25.1054 3.29289 25.2929C3.10536 25.4804 3 25.7348 3 26C3 26.2652 3.10536 26.5196 3.29289 26.7071C3.48043 26.8946 3.73478 27 4 27H28C28.2652 27 28.5196 26.8946 28.7071 26.7071C28.8946 26.5196 29 26.2652 29 26C29 25.7348 28.8946 25.4804 28.7071 25.2929C28.5196 25.1054 28.2652 25 28 25ZM20 6H25V25H20V6ZM13 12H18V25H13V12ZM7 18H11V25H7V18Z',
-    textContent: 'Transforming career trajecories with strategic insights',
+    textContent: 'Transforming career trajectories with strategic insights',
+  },
+];
+
+export const rotateLinkData: Array<LinkDataInterface> = [
+  {
+    link: '/ellipse01.jpg',
+    width: 35,
+    top: '15%',
+    left: '25%',
+  },
+  {
+    link: '/ellipse02.jpg',
+    width: 70,
+    top: '0%',
+    left: '45%',
+  },
+  {
+    link: '/ellipse03.jpg',
+    width: 70,
+    top: '10%',
+    left: '75%',
+  },
+  {
+    link: '/ellipse04.jpg',
+    width: 108,
+    top: '50%',
+    left: '90%',
+  },
+  {
+    link: '/ellipse05.jpg',
+    width: 70,
+    top: '100%',
+    left: '85%',
+  },
+  {
+    link: '/ellipse06.jpg',
+    width: 70,
+    top: '100%',
+    left: '15%',
+  },
+  {
+    link: '/ellipse07.jpg',
+    width: 96,
+    top: '52%',
+    left: '5%',
   },
 ];

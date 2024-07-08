@@ -40,7 +40,7 @@ const JobsComponent = (props: Props) => {
       </div>
 
       {/* Create Button */}
-      <Button className='block mx-auto w-60 h-12 rounded-3xl font-recMedium text-headerSix hover:scale-105 ease-in-out transition transform duration-300'>Create account</Button>
+      <Button className='block mx-auto w-60 h-12 rounded-3xl font-recMedium text-headerSix hover:scale-105 ease-in-out transition transform duration-300' style={{color: "#F0F0F0"}}>Create account</Button>
     </div>
   );
 };
