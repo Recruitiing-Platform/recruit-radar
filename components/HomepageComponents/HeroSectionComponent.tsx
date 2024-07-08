@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import Image from 'next/image';
 
 type Props = {};
@@ -27,13 +27,13 @@ const HeroSectionComponent = (props: Props) => {
         </Button>
       </div>
 
-      <div className='flex items-center justify-center'>
+      <div className="flex items-center justify-center">
         <Image
           src="/hero-pic.jpg"
           width={826}
           height={463}
-          alt='Hero Image'
-          loading='lazy'
+          alt="Hero Image"
+          loading="lazy"
           className="object-center object-cover rounded-2xl"
         />
       </div>
