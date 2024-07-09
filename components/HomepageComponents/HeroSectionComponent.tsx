@@ -1,21 +1,33 @@
+'use client';
+
 import React from 'react';
 import { Button } from '../ui/button';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type Props = {};
 
 const HeroSectionComponent = (props: Props) => {
   return (
-    <div className="px-20 py-32 text-center">
-      <h1 className="text-recDark text-textLarge dark:text-recLightGrey font-[800] pb-6">
+    <div
+      className="px-20 py-32 text-center"
+      id="hero"
+    >
+      <motion.h1 initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }} className="text-recDark text-textLarge dark:text-recLightGrey font-[800] pb-6">
         Your Best Recruiting System!
-      </h1>
-      <p className="text-headerSix font-recMedium text-recSubtle dark:text-recLightGrey w-2/3 mx-auto pb-10">
+      </motion.h1>
+      <motion.p initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }} className="text-headerSix font-recMedium text-recSubtle dark:text-recLightGrey w-2/3 mx-auto pb-10">
         RecruitRadar helps in connecting job seekers to their dream jobs and
         employers to top-notch candidates with trusted and structured matching
         system.
-      </p>
-      <div className="space-x-7 pb-16">
+      </motion.p>
+      <motion.div initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }} className="space-x-7 pb-16">
         <Button className="text-recLightGrey text-[24px] font-recMedium w-72 h-16 hover:scale-105 transition transform duration-300">
           Find your next hire
         </Button>
@@ -25,9 +37,11 @@ const HeroSectionComponent = (props: Props) => {
         >
           Find your next job
         </Button>
-      </div>
+      </motion.div>
 
-      <div className="flex items-center justify-center">
+      <motion.div  initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }} className="flex items-center justify-center">
         <Image
           src="/hero-pic.jpg"
           width={826}
@@ -36,7 +50,7 @@ const HeroSectionComponent = (props: Props) => {
           loading="lazy"
           className="object-center object-cover rounded-2xl"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

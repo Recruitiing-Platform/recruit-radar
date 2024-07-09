@@ -1,7 +1,10 @@
+"use client";
+
 import { categoryData } from '@/data';
 import { CategoryDataInterface } from '@/interfaces/HomepageInterface';
 import React from 'react';
 import { Button } from '../ui/button';
+import { motion } from 'framer-motion';
 
 type Props = {};
 
@@ -15,7 +18,8 @@ const CategoryComponent = (props: Props) => {
 
       <div className="grid grid-cols-4 gap-[60px] pb-[60px]">
         {categoryData.map((category: CategoryDataInterface, index: number) => (
-          <div key={index} className="flex flex-col gap-6 items-center">
+          <motion.div whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }} key={index} className="flex flex-col gap-6 items-center">
             <div
               style={{ backgroundColor: category.backgroundColor }}
               className="w-fit rounded-full p-5"
@@ -33,7 +37,7 @@ const CategoryComponent = (props: Props) => {
             <span className="text-headerSix font-recMedium text-[#1D1D1D] dark:text-recLightGrey">
               {category.textContent}
             </span>
-          </div>
+          </motion.div>
         ))}
       </div>
 

@@ -21,7 +21,7 @@ const HireComponent = (props: Props) => {
             />
           </div>
         ))}
-        <div className='absolute top-[40%] left-[22%] h-64 w-[700px] bg-recPrimary/25 rounded-full blur-[150px]'></div>
+        <div className='absolute top-[40%] left-[22%] h-64 w-[700px] bg-recPrimary/25 rounded-full blur-effect'></div>
         <div className='absolute top-[40%] left-[25%] w-1/2 text-center'>
             <h2 className='display-two pb-6'>Ready for your next hire</h2>
             <p className='text-headerSix font-recRegular leading-8 pb-11'>Along with conventional advertising & below the line activities & organiztions have come to realize that they need to invest</p>
