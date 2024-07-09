@@ -6,7 +6,7 @@ type Props = {};
 
 const HeroSectionComponent = (props: Props) => {
   return (
-    <div className="px-20 py-32 text-center">
+    <div className="px-20 py-32 text-center" id='hero'>
       <h1 className="text-recDark text-textLarge dark:text-recLightGrey font-[800] pb-6">
         Your Best Recruiting System!
       </h1>

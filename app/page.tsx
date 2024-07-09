@@ -4,6 +4,7 @@ import HeroSectionComponent from '@/components/HomepageComponents/HeroSectionCom
 import HireComponent from '@/components/HomepageComponents/HireComponent';
 import JobsComponent from '@/components/HomepageComponents/JobsComponent';
 import TestimonialComponent from '@/components/HomepageComponents/TestimonialComponent';
+import ScrollButton from '@/components/ScrollButton';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ChooseComponent />
       <HireComponent />
       <TestimonialComponent />
+      <ScrollButton sectionId="hero" />
     </main>
   );
 }
