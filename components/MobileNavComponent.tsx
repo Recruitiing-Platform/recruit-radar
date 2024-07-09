@@ -11,27 +11,11 @@ import { NavDataInterface } from '@/interfaces/HomepageInterface';
 
 type Props = {};
 
-const NavBarComponent = (props: Props) => {
+const MobileNavComponent = (props: Props) => {
   const pathname = usePathname();
 
-  const [scrolled, setScrolled] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleNavBarScroll = () =>
-      window.scrollY > 50 ? setScrolled(true) : setScrolled(false);
-
-    window.addEventListener('scroll', handleNavBarScroll);
-
-    return () => window.removeEventListener('scroll', handleNavBarScroll);
-  }, []);
-
   return (
-    <nav
-      className={`sm:hidden md:flex dark:bg-[#000611] bg-recLight z-[100] px-20 h-32 flex items-center justify-between sticky top-0 ${
-        scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
-      }`}
-    >
-
+    <nav className="sm:flex md:hidden dark:bg-[#000611] bg-recLight z-[100] px-4 flex items-center justify-between">
       {/* Logo */}
       <Link href="/" className="hidden dark:flex">
         <Image
@@ -53,7 +37,7 @@ const NavBarComponent = (props: Props) => {
       </Link>
 
       {/* Nav Items */}
-      <ul className="flex h-16 items-center gap-7 shadow-[2px_2px_8px_0px_rgba(194,193,193,0.59)] dark:shadow-[2px_2px_4px_2px_rgba(198,198,198,0.07)] border border-recLightGrey dark:border-recSecondary rounded-full px-14">
+      {/* <ul className="flex h-16 items-center gap-7 shadow-[2px_2px_8px_0px_rgba(194,193,193,0.59)] dark:shadow-[2px_2px_4px_2px_rgba(198,198,198,0.07)] border border-recLightGrey dark:border-recSecondary rounded-full px-14">
         {navData.map((data: NavDataInterface) => (
           <>
             <li
@@ -67,9 +51,9 @@ const NavBarComponent = (props: Props) => {
             </li>
           </>
         ))}
-      </ul>
+      </ul> */}
 
-      <div className='flex gap-10 items-center'>
+      <div className="flex gap-10 items-center">
         {/* Register button */}
         <ButtonComponent
           btnText="Create Account"
@@ -84,4 +68,4 @@ const NavBarComponent = (props: Props) => {
   );
 };
 
-export default NavBarComponent;
+export default MobileNavComponent;
