@@ -117,3 +117,18 @@
       @apply font-sans font-recMedium text-textBody leading-[20px]
     }
   }
+
+  @keyframes blurAnimation {
+    0%, 100% {
+      filter: blur(20px);
+    }
+    50% {
+      filter: blur(200px);
+    }
+  }
+  
+  .blur-effect {
+    animation: blurAnimation 3s ease-in-out infinite;
+  }
+
+  
