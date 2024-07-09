@@ -1,5 +1,5 @@
 import { rotateLinkData } from '@/data';
-import { LinkDataInterface } from '@/interfaces/LinkDataInterface';
+import { LinkDataInterface } from '@/interfaces/HomepageInterface';
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
@@ -8,7 +8,7 @@ type Props = {};
 
 const HireComponent = (props: Props) => {
   return (
-    <div className="px-10 pb-64">
+    <div className="px-10 pb-40">
       <div className='relative h-[450px]'>
         {rotateLinkData.map((link: LinkDataInterface, index: number) => (
           <div key={index} className='object-center object-cover' style={{position: "absolute", top: link.top, left: link.left}}>

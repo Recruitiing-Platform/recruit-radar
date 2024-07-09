@@ -1,5 +1,5 @@
 import { jobData } from '@/data';
-import { JobDataInterface } from '@/interfaces/JobDataInterface';
+import { JobDataInterface } from '@/interfaces/HomepageInterface';
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { IoMdRadioButtonOn } from 'react-icons/io';

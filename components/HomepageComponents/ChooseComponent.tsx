@@ -1,5 +1,5 @@
 import { chooseData } from '@/data';
-import { ChooseDataInterface } from '@/interfaces/ChooseDataInterface';
+import { ChooseDataInterface } from '@/interfaces/HomepageInterface';
 import Image from 'next/image';
 import React from 'react';
 

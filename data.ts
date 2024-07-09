@@ -1,8 +1,8 @@
-import { CategoryDataInterface } from './interfaces/CategoryDataInterface';
-import { ChooseDataInterface } from './interfaces/ChooseDataInterface';
-import { JobDataInterface } from './interfaces/JobDataInterface';
-import { LinkDataInterface } from './interfaces/LinkDataInterface';
-import { NavDataInterface } from './interfaces/NavDataInterface';
+import { CategoryDataInterface, TestimonialDataInterface } from './interfaces/HomepageInterface';
+import { ChooseDataInterface } from './interfaces/HomepageInterface';
+import { JobDataInterface } from './interfaces/HomepageInterface';
+import { LinkDataInterface } from './interfaces/HomepageInterface';
+import { NavDataInterface } from './interfaces/HomepageInterface';
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -210,3 +210,31 @@ export const rotateLinkData: Array<LinkDataInterface> = [
     left: '5%',
   },
 ];
+
+export const testimonialData: Array<TestimonialDataInterface> = [
+  {
+    name: 'Oluwatosin A',
+    job: 'Mobile Developer',
+    testimony: "As a mobile developer, finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+  {
+    name: 'James Hebron',
+    job: 'UI/UX Designer',
+    testimony: "As a product designer, finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+  {
+    name: 'Kemi Agolayan',
+    job: 'Product/Project Manager',
+    testimony: "Finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+  {
+    name: 'Lucy Brighton',
+    job: 'JS Developer',
+    testimony: "Finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+  {
+    name: 'Kayode Peterson',
+    job: 'Content Creator',
+    testimony: "As a social media manager, finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+]

@@ -1,5 +1,5 @@
 import { categoryData } from '@/data';
-import { CategoryDataInterface } from '@/interfaces/CategoryDataInterface';
+import { CategoryDataInterface } from '@/interfaces/HomepageInterface';
 import React from 'react';
 import { Button } from '../ui/button';
 
