@@ -9,7 +9,7 @@ const TestimonialComponent = (props: Props) => {
     <div className='p-20 flex items-center justify-between gap-5'>
       {/* Image */}
         <div className='object-center object-cover w-[200%]' >
-          <Image src="/testimonial01.jpg" alt='Testimonial image' width={413} height={540} className='rounded-2xl' />
+          <Image src="/testimonial01.jpg" alt='Testimonial image' width={413} height={540} className='rounded-2xl' loading='lazy' />
         </div>
 
         {/* Testimonies */}

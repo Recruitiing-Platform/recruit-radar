@@ -29,9 +29,9 @@ const MobileNavComponent = (props: Props) => {
   }, []);
 
   return (
-    <div className="sm:block md:hidden">
+    <div className="sm:block lg:hidden">
       <motion.nav
-        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 pt-6 ${isOpen ? "w-screen  top-0 z-10 overflow-hidden fixed h-16" : "relative"} ${
+        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 md:px-10 pt-6 sticky top-0 ${isOpen ? "w-screen top-0 z-10 overflow-hidden fixed h-16" : "relative"} ${
             scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] z-[100]' : ''
           }`}
       >
