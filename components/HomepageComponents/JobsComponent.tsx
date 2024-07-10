@@ -9,11 +9,11 @@ type Props = {};
 
 const JobsComponent = (props: Props) => {
   return (
-    <div className="px-4 lg:px-20 3xl:px-60">
+    <div className="px-4 md:px-10 lg:px-20 3xl:px-60">
       <h1 className="text-center font-recSemiBold text-headerFour lg:display-two pb-10">Latest Job Openings</h1>
 
       {/* Latest Job Displayed */}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-5 3xl:gap-10 pb-[60px]'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 gap-5 3xl:gap-10 pb-11 lg:pb-[60px]'>
         {jobData.map((job: JobDataInterface, index: number) => (
           <div key={index} className='p-5 rounded-[20px] border border-recSubtle dark:border-[#242424] border-l-[5px] cursor-pointer hover:scale-105 transition transform duration-500' style={{borderLeftColor: job.sideColor}}>
             <div className='flex items-center justify-between text-textSmall 3xl:text-headerSix font-recMedium pb-8'>

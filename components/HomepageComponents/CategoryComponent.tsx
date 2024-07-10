@@ -10,7 +10,7 @@ type Props = {};
 
 const CategoryComponent = (props: Props) => {
   return (
-    <div className="px-4 lg:px-56 pb-20 lg:pb-40 text-center">
+    <div className="px-4 md:px-10 lg:px-56 pb-20 lg:pb-40 text-center">
       <h1 className="text-headerThree font-recSemiBold lg:display-two pb-2">Browse Categories</h1>
       <p className="text-[#625B71] dark:text-recLightGrey 3xl:text-headerSix pb-12">
         Most popular categories of portal sorted by popularity
