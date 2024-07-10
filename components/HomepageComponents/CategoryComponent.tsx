@@ -10,13 +10,13 @@ type Props = {};
 
 const CategoryComponent = (props: Props) => {
   return (
-    <div className="px-56 pb-40 text-center">
-      <h1 className="display-two pb-2">Browse Categories</h1>
-      <p className="text-[#625B71] dark:text-recLightGrey pb-12">
+    <div className="px-4 md:px-10 lg:px-56 pb-20 lg:pb-40 text-center">
+      <h1 className="text-headerThree font-recSemiBold lg:display-two pb-2">Browse Categories</h1>
+      <p className="text-[#625B71] dark:text-recLightGrey 3xl:text-headerSix pb-12">
         Most popular categories of portal sorted by popularity
       </p>
 
-      <div className="grid grid-cols-4 gap-[60px] pb-[60px]">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-3 sm:gap-10 lg:gap-24 xl:gap-[60px] pb-[60px] 3xl:w-1/2 3xl:mx-auto">
         {categoryData.map((category: CategoryDataInterface, index: number) => (
           <motion.div whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }} key={index} className="flex flex-col gap-6 items-center">
@@ -34,7 +34,7 @@ const CategoryComponent = (props: Props) => {
                 <path d={category.path} fill="#747474" />
               </svg>
             </div>
-            <span className="text-headerSix font-recMedium text-[#1D1D1D] dark:text-recLightGrey">
+            <span className="text-textSmall lg:text-headerSix 3xl:text-headerFour font-recMedium text-[#1D1D1D] dark:text-recLightGrey">
               {category.textContent}
             </span>
           </motion.div>
@@ -43,7 +43,7 @@ const CategoryComponent = (props: Props) => {
 
       <Button
         variant="outline"
-        className="text-recPrimary text-[20px] font-recMedium w-72 h-16 hover:scale-105 transition transform duration-300"
+        className="text-recPrimary text-[20px] 3xl:text-headerFour font-recMedium w-72 h-16 hover:scale-105 transition transform duration-300"
       >
         More
       </Button>

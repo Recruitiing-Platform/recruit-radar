@@ -10,8 +10,8 @@ type Props = {};
 const ChooseComponent = (props: Props) => {
   
   return (
-    <div className="py-40 px-40">
-      <h1 className="display-two text-center pb-10">
+    <div className="px-4 md:px-10 py-20 lg:p-40 3xl:px-60">
+      <h1 className="text-headerFour font-recSemiBold md:display-two text-center pb-10">
         Why choose <span className="text-recPrimary">RecruitRadar</span>
       </h1>
       <div className="dark:hidden flex justify-center pb-5">
@@ -33,11 +33,11 @@ const ChooseComponent = (props: Props) => {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4 gap-5">
         {chooseData.map((data: ChooseDataInterface, index: number) => (
           <div
             key={index}
-            className="text-center px-28 py-8 flex flex-col gap-6 items-center justify-center border dark:border-[#242424] rounded-[20px]"
+            className="text-center p-10 lg:px-28 3xl:px-20 py-8 flex flex-col gap-6 items-center justify-center border dark:border-[#242424] rounded-[20px]"
           >
             <div className="p-5 rounded-full bg-recPrimary/20 w-fit">
               <svg
@@ -50,7 +50,7 @@ const ChooseComponent = (props: Props) => {
                 <path d={data.path} fill="#FF595A" />
               </svg>
             </div>
-            <span>{data.textContent}</span>
+            <span className='3xl:text-headerSix'>{data.textContent}</span>
           </div>
         ))}
       </div>

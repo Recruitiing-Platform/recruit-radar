@@ -110,7 +110,7 @@
     }
 
     .display-small {
-      @apply font-sans font-recRegular text-textSmall leading-[0.75px]
+      @apply font-sans font-recRegular text-textSmall tracking-[0.75px]
     }
 
     .btn-text {
