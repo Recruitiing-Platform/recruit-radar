@@ -21,7 +21,7 @@ const MobileNavComponent = (props: Props) => {
 
   useEffect(() => {
     const handleNavBarScroll = () =>
-      window.scrollY > 10 ? setScrolled(true) : setScrolled(false);
+      window.scrollY > 50 ? setScrolled(true) : setScrolled(false);
 
     window.addEventListener('scroll', handleNavBarScroll);
 
@@ -41,10 +41,11 @@ const MobileNavComponent = (props: Props) => {
   }, [isOpen]);
 
   return (
-    <div className="sm:block lg:hidden">
+    <div className={`sm:block lg:hidden ${scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] sticky top-0 z-[100]' : ''
+          }`}>
       <motion.nav
-        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 md:px-10 pt-6 sticky top-0 ${isOpen ? "w-screen top-0 z-10 overflow-hidden fixed h-16" : "relative"} ${
-            scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
+        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 md:px-10 pt-6 pb-3 ${isOpen ? "w-screen top-0 z-10 fixed h-16" : "sticky top-0"} ${
+            scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] sticky top-0 z-[100]' : ''
           }`}
       >
         {/* Logo */}
