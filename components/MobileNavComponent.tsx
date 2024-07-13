@@ -3,19 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ModeToggle } from './ModeToggle';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { navData } from '@/data';
 import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import ButtonComponent from './ButtonComponent';
 import { Button } from './ui/button';
 
 type Props = {};
 
 const MobileNavComponent = (props: Props) => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -73,6 +73,7 @@ const MobileNavComponent = (props: Props) => {
           <ModeToggle />
           {/* Hamburger menu */}
           <div
+            aria-label="Toggle menu"
             className="p-2 rounded-full border border-[#F1F1F1] dark:border-[#242424] transition-all transform duration-500"
             onClick={() => setIsOpen(isOpen => !isOpen)}
           >
@@ -102,8 +103,7 @@ const MobileNavComponent = (props: Props) => {
           ))}
         </ul>
         <Button
-          className="font-recSemiBold block mx-auto ">Create Account</Button>
-        
+          className="font-recSemiBold block mx-auto" onClick={() => router.push('/signup')}>Create Account</Button>
       </div>}
     </div>
   );
