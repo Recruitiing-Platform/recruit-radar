@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import NavBarComponent from '@/components/NavBarComponent';
 import { useRouter } from 'next/navigation';
 import HeroSectionComponent from '@/components/HomepageComponents/HeroSectionComponent';
+import JobsComponent from '@/components/HomepageComponents/JobsComponent';
 
 jest.mock('next/navigation', () => ({
   ...jest.requireActual('next/navigation'),
@@ -84,5 +85,18 @@ describe('Home', () => {
     expect(push).toHaveBeenCalledWith('/seeker');
   });
 
-  /*================  Section =================== */
+  /*================ Job Categories Section =================== */
+  it('should display the create account button and route to the signup page', () => {
+    const push = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({
+      push,
+      prefetch: jest.fn(),
+    });
+
+    render(<JobsComponent />);
+
+    const button = screen.getByText(/create account/i);
+    fireEvent.click(button);
+    expect(push).toHaveBeenCalledWith('/signup');
+  });
 });
