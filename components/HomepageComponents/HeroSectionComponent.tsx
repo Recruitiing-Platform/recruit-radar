@@ -4,10 +4,13 @@ import React from 'react';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
 const HeroSectionComponent = (props: Props) => {
+  const router = useRouter();
+
   return (
     <div
       className="px-4 md:px-10 xl:px-20 sm:py-10 lg:py-32 text-center"
@@ -28,12 +31,13 @@ const HeroSectionComponent = (props: Props) => {
       <motion.div initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }} className="space-y-6 md:space-x-7 pb-8 lg:pb-16">
-        <Button className="text-recLightGrey text-[24px] font-recMedium w-full h-12 md:w-72 md:h-16 hover:scale-105 transition transform duration-300">
+        <Button className="text-recLightGrey text-[24px] font-recMedium w-full h-12 md:w-72 md:h-16 hover:scale-105 transition transform duration-300" onClick={() => router.push('/recruiter')}>
           Find your next hire
         </Button>
         <Button
           variant="outline"
           className="text-[24px] font-recMedium w-full h-12 md:w-72 md:h-16 hover:scale-105 transition transform duration-300"
+          onClick={() => router.push('/seeker')}
         >
           Find your next job
         </Button>

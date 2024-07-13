@@ -11,7 +11,7 @@ export const navData: Array<NavDataInterface> = [
   },
   {
     name: 'For Job Seekers',
-    link: '/seekers',
+    link: '/seeker',
   },
   {
     name: 'Contact',

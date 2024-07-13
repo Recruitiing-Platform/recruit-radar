@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import ButtonComponent from './ButtonComponent';
 import { ModeToggle } from './ModeToggle';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { navData } from '@/data';
 import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import MobileNavComponent from './MobileNavComponent';
@@ -14,6 +14,7 @@ type Props = {};
 
 const NavBarComponent = (props: Props) => {
   const pathname = usePathname();
+  const router = useRouter();
 
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -77,6 +78,7 @@ const NavBarComponent = (props: Props) => {
           btnText="Create Account"
           iconFill="#FFC8C8"
           className="w-48 3xl:w-72 font-recSemiBold"
+          onClick={() => router.push('/signup')}
         />
 
         {/* Change mode component */}

@@ -1,13 +1,18 @@
+'use client';
+
 import { jobData } from '@/data';
 import { JobDataInterface } from '@/interfaces/HomepageInterface';
 import React from 'react';
 import { MapPin } from 'lucide-react';
-import { IoMdRadioButtonOn } from 'react-icons/io';
+// import { IoMdRadioButtonOn } from 'react-icons/io';
 import { Button } from '../ui/button';
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
 const JobsComponent = (props: Props) => {
+  const router = useRouter();
+
   return (
     <div className="px-4 md:px-10 lg:px-20 3xl:px-60">
       <h1 className="text-center font-recSemiBold text-headerFour lg:display-two pb-10">Latest Job Openings</h1>
@@ -40,7 +45,9 @@ const JobsComponent = (props: Props) => {
       </div>
 
       {/* Create Button */}
-      <Button className='block mx-auto w-60 3xl:w-72 h-12 rounded-3xl font-recMedium text-headerSix 3xl:text-headerFive hover:scale-105 ease-in-out transition transform duration-300' style={{color: "#F0F0F0"}}>Create account</Button>
+      <Button className='block mx-auto w-60 3xl:w-72 h-12 rounded-3xl font-recMedium text-headerSix 3xl:text-headerFive hover:scale-105 ease-in-out transition transform duration-300' style={{color: "#F0F0F0"}}
+       onClick={() => router.push('/signup')}
+      >Create account</Button>
     </div>
   );
 };

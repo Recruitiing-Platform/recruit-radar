@@ -3,36 +3,49 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ModeToggle } from './ModeToggle';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { navData } from '@/data';
 import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import ButtonComponent from './ButtonComponent';
 import { Button } from './ui/button';
 
 type Props = {};
 
 const MobileNavComponent = (props: Props) => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleNavBarScroll = () =>
-      window.scrollY > 10 ? setScrolled(true) : setScrolled(false);
+      window.scrollY > 50 ? setScrolled(true) : setScrolled(false);
 
     window.addEventListener('scroll', handleNavBarScroll);
 
     return () => window.removeEventListener('scroll', handleNavBarScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isOpen]);
+
   return (
-    <div className="sm:block lg:hidden">
+    <div className={`sm:block lg:hidden ${scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] sticky top-0 z-[100]' : ''
+          }`}>
       <motion.nav
-        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 md:px-10 pt-6 sticky top-0 ${isOpen ? "w-screen top-0 z-10 overflow-hidden fixed h-16" : "relative"} ${
-            scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] z-[100]' : ''
+        className={`dark:bg-[#000611] bg-recLight flex items-center justify-between px-4 md:px-10 pt-6 pb-3 ${isOpen ? "w-screen top-0 z-10 fixed h-16" : "sticky top-0"} ${
+            scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] sticky top-0 z-[100]' : ''
           }`}
       >
         {/* Logo */}
@@ -60,6 +73,7 @@ const MobileNavComponent = (props: Props) => {
           <ModeToggle />
           {/* Hamburger menu */}
           <div
+            aria-label="Toggle menu"
             className="p-2 rounded-full border border-[#F1F1F1] dark:border-[#242424] transition-all transform duration-500"
             onClick={() => setIsOpen(isOpen => !isOpen)}
           >
@@ -89,8 +103,7 @@ const MobileNavComponent = (props: Props) => {
           ))}
         </ul>
         <Button
-          className="font-recSemiBold block mx-auto ">Create Account</Button>
-        
+          className="font-recSemiBold block mx-auto" onClick={() => router.push('/signup')}>Create Account</Button>
       </div>}
     </div>
   );

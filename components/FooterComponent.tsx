@@ -41,7 +41,7 @@ const FooterComponent = (props: Props) => {
             Our services
           </h4>
           <Link
-            href="/recruit"
+            href="/recruiter"
             className="block pb-5 text-[20px] 3xl:text-headerFive font-recRegular hover:underline hover:font-recMedium transition-all transform duration-300"
           >
             For Recruiters
