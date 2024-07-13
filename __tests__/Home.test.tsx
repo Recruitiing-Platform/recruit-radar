@@ -84,27 +84,5 @@ describe('Home', () => {
     expect(push).toHaveBeenCalledWith('/seeker');
   });
 
-  /*================ 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    Section =================== */
+  /*================  Section =================== */
 });
