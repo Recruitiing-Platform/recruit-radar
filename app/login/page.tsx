@@ -1,9 +1,40 @@
+"use client";
+
+import React from "react";
+import signIn from "../../lib/firebase/auth/signIn";
+
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
-import logo from "./logo.png";
-import { Input } from "postcss";
+
 interface Props {}
 
 const Login = (props: Props) => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const router = useRouter();
+  const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [signInError, setsignInError] = React.useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  const handleForm = async (event: any) => {
+    event.preventDefault();
+
+    const { result, error } = await signIn(email, password);
+
+    if (error) {
+      setsignInError(true)
+      return console.log(error);
+    }
+
+    // else successful
+    console.log(result);
+    return router.push("/admin");
+  };
+
   return (
     <div className="lg:flex h-screen">
       <div
@@ -124,13 +155,17 @@ const Login = (props: Props) => {
             </p>
             <div className="flex-grow border-t-2 border-recLightGrey pb-2"></div>
           </div>
-          <form className="grid grid-cols-1 min-w-full gap-2">
+          <form
+            onSubmit={handleForm}
+            className="grid grid-cols-1 min-w-full gap-2"
+          >
             <div className="grid grid-col-1 relative">
               <label className="text-left min-w-full text-textSmall font-recRegular">
                 Email*
               </label>
 
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 className="text-recBody rounded-md bg-recLightGrey py-2 pl-8"
                 type="email"
                 id="email"
@@ -155,8 +190,9 @@ const Login = (props: Props) => {
               </label>
 
               <input
+                onChange={(e) => setPassword(e.target.value)}
                 className=" text-recBody rounded-md bg-recLightGrey py-2 pl-8"
-                type="text"
+                type={passwordVisible ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="radar@gmail.com"
@@ -171,7 +207,7 @@ const Login = (props: Props) => {
                   height={20}
                 ></Image>
               </span>
-              <button>
+              <button onClick={togglePasswordVisibility}>
                 <Image
                   className="absolute inset-y-0 right-0  mt-[30px] mr-2"
                   src="/eyes.png"
@@ -181,12 +217,18 @@ const Login = (props: Props) => {
                 ></Image>
               </button>
             </div>
+
             <p className="text-left mb-4 text-textSmall font-recRegular">
-              Forgot password?
+              <a href="#">Forgot password?</a>
             </p>
+            <div>
+              <p className={signInError ? "text-left text-recError text-textSmall" :"hidden"}>
+                Your email or password is incorrect
+              </p>
+            </div>
 
             <button
-              className="bg-recPrimary py-2 rounded-md text-recLight flex items-center justify-center gap-1 hover:opacity-25 mb-4"
+              className="bg-recPrimary py-2 rounded-md text-recLight flex items-center justify-center gap-1 hover:opacity-25 mb-4 ease-in-out duration-100"
               type="submit"
             >
               Login
