@@ -18,6 +18,7 @@ const Login = (props: Props) => {
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+    console.log(passwordVisible);
   };
 
   const handleForm = async (event: any) => {
@@ -137,7 +138,7 @@ const Login = (props: Props) => {
             <p className="font-recMedium">Welcome back to Recruiter Radar</p>
           </div>
 
-          <button className="border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall inline-flex  item-center justify-center gap-2 font-recRegular min-h-auto">
+          <button className="border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall inline-flex  item-center justify-center gap-2 font-recRegular min-h-auto transform transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2">
             <span className="">
               <Image
                 src="/googleicon.png"
@@ -195,7 +196,7 @@ const Login = (props: Props) => {
                 type={passwordVisible ? "text" : "password"}
                 id="password"
                 name="password"
-                placeholder="radar@gmail.com"
+                placeholder="enter your password"
                 required
               />
               <span>
@@ -207,7 +208,7 @@ const Login = (props: Props) => {
                   height={20}
                 ></Image>
               </span>
-              <button onClick={togglePasswordVisibility}>
+              <button onClick={togglePasswordVisibility} type="button">
                 <Image
                   className="absolute inset-y-0 right-0  mt-[30px] mr-2"
                   src="/eyes.png"
@@ -218,11 +219,17 @@ const Login = (props: Props) => {
               </button>
             </div>
 
-            <p className="text-left mb-4 text-textSmall font-recRegular">
+            <p className="text-left mb-4 text-textSmall font-recSemiBold">
               <a href="#">Forgot password?</a>
             </p>
             <div>
-              <p className={signInError ? "text-left text-recError text-textSmall" :"hidden"}>
+              <p
+                className={
+                  signInError
+                    ? "text-left text-recError text-textSmall"
+                    : "hidden"
+                }
+              >
                 Your email or password is incorrect
               </p>
             </div>
