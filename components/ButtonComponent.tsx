@@ -5,12 +5,13 @@ type Props = {
   btnText: string;
   iconFill: string;
   className?: string;
+  onClick: () => void;
 };
 
 const ButtonComponent = (props: Props) => {
   return (
-    <Button className= {`flex items-center justify-center gap-1 ${props.className}`}>
-      <span>{props.btnText}</span>
+    <Button className={`flex items-center justify-center gap-2 ${props.className}`} onClick={props.onClick}>
+      <span className='3xl:text-headerFive'>{props.btnText}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
