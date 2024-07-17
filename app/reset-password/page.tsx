@@ -3,10 +3,13 @@ import { FormInput } from 'lucide-react'
 import React from 'react'
 import image from 'next/image'
 import ButtonComponent from '@/components/ButtonComponent'
+import { useRouter } from 'next/navigation'
  
 type Props = {}
 
 const ResetPasswordPage = (props: Props) => {
+  const router = useRouter()
+  
   return (
    /*main body*/
     <div className="pr-0 pl-8 pt-8 pb-8  flex items-center justify-center">
@@ -49,7 +52,7 @@ const ResetPasswordPage = (props: Props) => {
           </div>
           {/*reset button part*/}
           <div className='mt-32'>
-          <ButtonComponent btnText={'Reset'} iconFill={'#F5F4FB'} className='w-[451px] h-[48px] '/>
+          <ButtonComponent btnText={'Reset'} iconFill={'#F5F4FB'} className='w-[451px] h-[48px] ' onClick={() => router.push('/')}/>
           </div>
         </form>
         {/*login* link*/}
