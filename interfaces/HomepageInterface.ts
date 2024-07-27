@@ -36,3 +36,8 @@ export interface TestimonialDataInterface {
     job: string;
     testimony: string;
 }
+
+export interface FooterDataInterface {
+    header: string;
+    subheaders: Array<string>
+}

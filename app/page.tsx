@@ -4,13 +4,15 @@ import ChooseComponent from '@/components/HomepageComponents/ChooseComponent';
 import HeroSectionComponent from '@/components/HomepageComponents/HeroSectionComponent';
 import HireComponent from '@/components/HomepageComponents/HireComponent';
 import JobsComponent from '@/components/HomepageComponents/JobsComponent';
+import MobileSubscribeComponent from '@/components/HomepageComponents/MobileSubscribeComponent';
+import SubscribeComponent from '@/components/HomepageComponents/SubscribeComponent';
 import TestimonialComponent from '@/components/HomepageComponents/TestimonialComponent';
 import NavBarComponent from '@/components/NavBarComponent';
 import ScrollButton from '@/components/ScrollButton';
 
 export default function Home() {
   return (
-    <main className="dark:bg-[#000611]">
+    <main className="dark:bg-[#000611] relative">
       <NavBarComponent />
       <HeroSectionComponent />
       <CategoryComponent />
@@ -18,7 +20,11 @@ export default function Home() {
       <ChooseComponent />
       <HireComponent />
       <TestimonialComponent />
-      <FooterComponent />
+      <MobileSubscribeComponent />
+      <div className="relative">
+        <FooterComponent />
+        <SubscribeComponent />
+      </div>
       <ScrollButton sectionId="hero" />
     </main>
   );

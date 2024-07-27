@@ -38,11 +38,11 @@ const HireComponent = (props: Props) => {
             organiztions have come to realize that they need to invest
           </p>
           <Button
-            className="block mx-auto w-60 3xl:w-72 text-headerSix 3xl:text-headerFour font-recMedium rounded-3xl hover:scale-105 ease-in-out transition transform duration-300"
+            className="block mx-auto w-60 3xl:w-72 text-headerSix 3xl:text-headerFour font-recMedium rounded-md hover:scale-105 ease-in-out transition transform duration-300"
             style={{ color: '#F0F0F0' }}
             onClick={() => router.push('/signup')}
           >
-            Create account
+            Hire now
           </Button>
         </div>
       </div>
