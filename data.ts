@@ -1,4 +1,4 @@
-import { CategoryDataInterface, TestimonialDataInterface } from './interfaces/HomepageInterface';
+import { CategoryDataInterface, FooterDataInterface, TestimonialDataInterface } from './interfaces/HomepageInterface';
 import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
@@ -14,8 +14,8 @@ export const navData: Array<NavDataInterface> = [
     link: '/seeker',
   },
   {
-    name: 'Contact',
-    link: '/contact',
+    name: 'About Us',
+    link: '/about',
   },
 ];
 
@@ -236,5 +236,20 @@ export const testimonialData: Array<TestimonialDataInterface> = [
     name: 'Kayode Peterson',
     job: 'Content Creator',
     testimony: "As a social media manager, finding the right job opportunities can sometimes be a challenge, but RecruitRadar made it incredibly easy. The platform's advanced search and filtering options allowed me to quickly find positions that matched my skills and preferences. The user-friendly interface made the application process smooth and efficient."
+  },
+]
+
+export const footerData: Array<FooterDataInterface> = [
+  {
+    header: "for recruiters",
+    subheaders: ["Find Talent", "Create Employee", "Employee App Analyzer"]
+  },
+  {
+    header: "for job seekers",
+    subheaders: ["Job postings", "Resume Ranker"]
+  },
+  {
+    header: "Recruit Radar",
+    subheaders: ["About us", "Contact page", "Feedback", "FAQs", "Help"]
   },
 ]

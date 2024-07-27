@@ -7,7 +7,7 @@ type Props = {};
 
 const TestimonialComponent = (props: Props) => {
   return (
-    <div className="p-4 md:px-10 lg:px-20 3xl:px-56 md:py-10 lg:py-20 flex flex-col md:flex-row items-center justify-between gap-5">
+    <div className="p-4 md:px-10 lg:px-20 3xl:px-56 md:pt-10 md:pb-60 lg:pt-20 lg:pb-64 flex flex-col md:flex-row items-center justify-between gap-5">
       <div className='block lg:hidden'>
         <h1 className="font-recSemiBold text-headerFour text-center md:text-headerThree pb-4 pt-1 3xl:text-headerTwo">
           What Our Users Say About{' '}
