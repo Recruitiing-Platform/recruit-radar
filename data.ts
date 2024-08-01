@@ -253,3 +253,10 @@ export const footerData: Array<FooterDataInterface> = [
     subheaders: ["About us", "Contact page", "Feedback", "FAQs", "Help"]
   },
 ]
+
+export const texts: Array<string> = [
+  'All you need to hire or get hired fast.',
+  'Access thousands of job opportunities',
+  'Professionally tailored resume',
+  'AI powered applicant tracking system',
+];

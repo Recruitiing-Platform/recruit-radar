@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
+import RecruitRadarContextProvider from '@/contexts/useRecruitRadarContext';
+import { Toaster } from '@/components/ui/toaster';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -15,17 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={manrope.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <RecruitRadarContextProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+        <Toaster />
+      </ThemeProvider>
+    </RecruitRadarContextProvider>
   );
 }
