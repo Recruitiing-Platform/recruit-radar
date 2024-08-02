@@ -23,7 +23,7 @@ const RightSideTextComponent = (props: Props) => {
       {texts.map((text, index) => (
         <p
           key={index}
-          className={`absolute text-center top-[25%] text-headerOne font-[800] text-transparent bg-clip-text transition-opacity duration-1000 ${
+          className={`absolute text-center top-[15%] lg:top-[25%] md:text-headerThree lg:text-headerOne font-[800] text-transparent bg-clip-text transition-opacity duration-1000 ${
             currentTextIndex === index ? 'opacity-100' : 'opacity-0'
           }`}
           style={{

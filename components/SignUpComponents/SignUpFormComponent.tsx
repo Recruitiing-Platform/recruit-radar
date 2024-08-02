@@ -6,11 +6,22 @@ import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { useState } from 'react';
 
 const SignUpFormComponent = () => {
-  const { handleSubmit, name, email, password, setName, setEmail, setPassword, error, buttonColor, loading } = useRecruitRadarHook();
+  const {
+    handleSubmit,
+    name,
+    email,
+    password,
+    setName,
+    setEmail,
+    setPassword,
+    error,
+    buttonColor,
+    loading,
+  } = useRecruitRadarHook();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
-    <form className="space-y-4 mt-7" onSubmit={handleSubmit}>
+    <form className="space-y-4 mt-7 md:mt-2 lg:mt-7" onSubmit={handleSubmit}>
       <InputField
         id="name"
         label="Enter Name"
@@ -43,26 +54,26 @@ const SignUpFormComponent = () => {
           onChange={e => setPassword(e.target.value)}
         />
         <div
-          className="absolute right-3 top-11 cursor-pointer text-recSubtle"
+          className="absolute right-3 top-10 cursor-pointer text-recSubtle"
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
         </div>
       </div>
       {error && <p className="text-red-500 text-recError text-xs">{error}</p>}
-      <Button
-        className={`w-full py-3 ${buttonColor} text-recLight font-recBold rounded-lg mb-6 flex gap-3 items-center justify-center hover:scale-105 duration-300 transition-transform`}
-        type="submit"
-      >
-        {loading ? (
-          <Button variant={'disabled'}>Loading...</Button>
-        ) : (
+      {loading ? (
+        <Button className='w-full' variant={'disabled'}>Loading...</Button>
+      ) : (
+        <Button
+          className={`w-full py-3 ${buttonColor} text-recLight font-recBold rounded-lg mb-6 flex gap-3 items-center justify-center hover:scale-105 duration-300 transition-transform`}
+          type="submit"
+        >
           <>
             <span>Create account</span>
             <FaUser />
           </>
-        )}
-      </Button>
+        </Button>
+      )}
     </form>
   );
 };
