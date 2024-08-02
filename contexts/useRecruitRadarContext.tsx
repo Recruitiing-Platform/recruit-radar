@@ -8,6 +8,7 @@ import {
   sendEmailVerification,
   signInWithPopup,
   User,
+  updateProfile,
 } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { createContext, useState } from 'react';
@@ -32,18 +33,25 @@ const RecruitRadarContextProvider = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [googleLoading, setGoogleLoading] = useState<boolean>(false);
   const [twitterLoading, setTwitterLoading] = useState<boolean>(false);
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+
+  const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
   const signInWithGoogle = async () => {
+    setGoogleLoading(true);
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
       setRRUser(result?.user);
     } catch (error) {
       console.error('Google sign-in error:', error);
+    } finally {
+      setGoogleLoading(false);
     }
   };
 
   const signInWithTwitter = async () => {
+    setTwitterLoading(true);
     const provider = new TwitterAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
@@ -51,6 +59,8 @@ const RecruitRadarContextProvider = ({
       setRRUser(result?.user);
     } catch (error) {
       console.error('Twitter sign-in error:', error);
+    } finally {
+      setTwitterLoading(false)
     }
   }
 
@@ -64,6 +74,23 @@ const RecruitRadarContextProvider = ({
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return passwordRegex.test(password);
   };
+
+  const resendEmail = async () => {
+    try {
+      const actionCodeSettings = {
+        url: `${base_url}/verify`,  // your Next.js page URL
+        handleCodeInApp: true,
+      };
+      if (rRUser) {
+        await sendEmailVerification(rRUser, actionCodeSettings);
+        toast({
+          description: 'Email sent successfully!'
+        })
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -111,15 +138,21 @@ const RecruitRadarContextProvider = ({
         password
       );
       const user = userCredential.user;
-      console.log("User Credentials", user)
+      await updateProfile(user, { displayName: name });
       setRRUser(user);
+      setButtonColor('bg-[#000C22]');
       toast({
         description: 'Signup successful. Verify your email address.'
       })
-      await sendEmailVerification(user);
-      // alert('Verification email sent!');
-      // router.push('/login');
-      setButtonColor('bg-[#000C22]');
+      const actionCodeSettings = {
+        url: `${base_url}/verify`,  // your Next.js page URL
+        handleCodeInApp: true,
+      };
+      await sendEmailVerification(user, actionCodeSettings);
+      setShowAlert(true);
+      setName('');
+      setEmail('');
+      setPassword('');
     } catch (error: any) {
       setError(error.message);
       setButtonColor('bg-recPrimary');
@@ -144,7 +177,11 @@ const RecruitRadarContextProvider = ({
         setPassword,
         loading,
         googleLoading,
-        twitterLoading
+        twitterLoading,
+        showAlert,
+        setShowAlert,
+        rRUser,
+        resendEmail
       }}
     >
       {children}
