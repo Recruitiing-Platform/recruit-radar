@@ -30,10 +30,13 @@ const RecruitRadarContextProvider = ({
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [loginEmail, setLoginEmail] = useState<string>('');
+  const [loginPassword, setLoginPassword] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [googleLoading, setGoogleLoading] = useState<boolean>(false);
   const [twitterLoading, setTwitterLoading] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [signInError, setsignInError] = useState(false);
 
   const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -181,7 +184,8 @@ const RecruitRadarContextProvider = ({
         showAlert,
         setShowAlert,
         rRUser,
-        resendEmail
+        resendEmail,
+        loginEmail, loginPassword, setLoginEmail, setLoginPassword, signInError
       }}
     >
       {children}
