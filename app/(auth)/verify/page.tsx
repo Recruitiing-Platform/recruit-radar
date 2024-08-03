@@ -10,26 +10,26 @@ import { ModeToggle } from '@/components/ModeToggle';
 const VerifyPage = () => {
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const verifyEmail = async () => {
-  //     const oobCode = new URLSearchParams(window.location.search).get(
-  //       'oobCode'
-  //     ) as string;
+  useEffect(() => {
+    const verifyEmail = async () => {
+      const oobCode = new URLSearchParams(window.location.search).get(
+        'oobCode'
+      ) as string;
 
-  //     if (!oobCode) {
-  //       router.push('/error');
-  //     }
+      if (!oobCode) {
+        router.push('/error');
+      }
 
-  //     try {
-  //       await applyActionCode(auth, oobCode);
-  //       router.push('/success');
-  //     } catch (error) {
-  //       console.error('Error verifying email:', error);
-  //     }
-  //   };
+      try {
+        await applyActionCode(auth, oobCode);
+        router.push('/success');
+      } catch (error) {
+        console.error('Error verifying email:', error);
+      }
+    };
 
-  //   verifyEmail();
-  // }, [router]);
+    verifyEmail();
+  }, [router]);
 
   return (
     <div className="px-5 md:px-10 lg:px-20 pt-5">

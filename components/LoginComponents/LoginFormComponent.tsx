@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 
 const LoginFormComponent = () => {
-  const {loginEmail, loginPassword, setLoginEmail, setLoginPassword, signInError} = useRecruitRadarHook();
+  const { setLoginEmail, setLoginPassword, signInError, handleLoginSubmit, buttonColor } = useRecruitRadarHook();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -14,8 +14,8 @@ const LoginFormComponent = () => {
 
   return (
     <form
-      // onSubmit={handleForm}
       className="grid grid-cols-1 min-w-full gap-2"
+      onSubmit={handleLoginSubmit}
     >
       <div className="grid grid-col-1 relative pb-2">
         <label className="text-left min-w-full text-textSmall font-recRegular pb-2">
@@ -77,7 +77,7 @@ const LoginFormComponent = () => {
       </div>
 
       <p className="text-left mb-4 text-textSmall font-recSemiBold">
-        <Link href="#" className="hover:underline">
+        <Link href="/forgot-password" className="hover:underline">
           Forgot password?
         </Link>
       </p>
@@ -89,7 +89,7 @@ const LoginFormComponent = () => {
       </div>
 
       <button
-        className="bg-recPrimary py-2 rounded-md text-recLight flex items-center justify-center gap-1 hover:opacity-25 mb-4 ease-in-out duration-100"
+        className={`${buttonColor} py-2 rounded-md text-recLight flex items-center justify-center gap-1 hover:opacity-25 mb-4 ease-in-out duration-100`}
         type="submit"
       >
         Login

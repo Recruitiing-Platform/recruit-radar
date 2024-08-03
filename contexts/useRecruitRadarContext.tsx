@@ -9,10 +9,12 @@ import {
   signInWithPopup,
   User,
   updateProfile,
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from 'firebase/auth';
-import { useRouter } from 'next/navigation';
-import { createContext, useState } from 'react';
-import { useToast } from "@/components/ui/use-toast";
+import { usePathname, useRouter } from 'next/navigation';
+import { createContext, useEffect, useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 
 export const RecruitRadarContext = createContext<any>({});
 
@@ -23,8 +25,10 @@ const RecruitRadarContextProvider = ({
 }) => {
   const router = useRouter();
   const { toast } = useToast();
+  const pathname = usePathname();
 
   const [rRUser, setRRUser] = useState<User | null>(null);
+  const [providerUser, setProviderUser] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [buttonColor, setButtonColor] = useState<string>('bg-recPrimary');
   const [name, setName] = useState<string>('');
@@ -33,19 +37,28 @@ const RecruitRadarContextProvider = ({
   const [loginEmail, setLoginEmail] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [loginLoading, setLoginLoading] = useState<boolean>(false);
   const [googleLoading, setGoogleLoading] = useState<boolean>(false);
   const [twitterLoading, setTwitterLoading] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
-  const [signInError, setsignInError] = useState(false);
+  const [signInError, setSignInError] = useState<string | null>(null);
 
   const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
   const signInWithGoogle = async () => {
     setGoogleLoading(true);
     const provider = new GoogleAuthProvider();
+
     try {
       const result = await signInWithPopup(auth, provider);
-      setRRUser(result?.user);
+      const user = result?.user;
+      setRRUser(user);
+      if (pathname === '/login') {
+        router.push('/home');
+      }
+      if (pathname === '/signup') {
+        router.push('/decision')
+      }
     } catch (error) {
       console.error('Google sign-in error:', error);
     } finally {
@@ -53,19 +66,40 @@ const RecruitRadarContextProvider = ({
     }
   };
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (user) {
+        setRRUser(user);
+        console.log('User is signed in:', user);
+      } else {
+        setRRUser(null);
+        console.log('No user is signed in.');
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
+
   const signInWithTwitter = async () => {
     setTwitterLoading(true);
     const provider = new TwitterAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result);
-      setRRUser(result?.user);
+      const user = result?.user;
+      setRRUser(user);
+      if (pathname === '/login') {
+        router.push('/home');
+      }
+      if (pathname === '/signup') {
+        router.push('/decision')
+      }
     } catch (error) {
       console.error('Twitter sign-in error:', error);
     } finally {
-      setTwitterLoading(false)
+      setTwitterLoading(false);
     }
-  }
+  };
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,19 +115,19 @@ const RecruitRadarContextProvider = ({
   const resendEmail = async () => {
     try {
       const actionCodeSettings = {
-        url: `${base_url}/verify`,  // your Next.js page URL
+        url: `${base_url}/verify`, // your Next.js page URL
         handleCodeInApp: true,
       };
       if (rRUser) {
         await sendEmailVerification(rRUser, actionCodeSettings);
         toast({
-          description: 'Email sent successfully!'
-        })
+          description: 'Email sent successfully!',
+        });
       }
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -143,12 +177,11 @@ const RecruitRadarContextProvider = ({
       const user = userCredential.user;
       await updateProfile(user, { displayName: name });
       setRRUser(user);
-      setButtonColor('bg-[#000C22]');
       toast({
-        description: 'Signup successful. Verify your email address.'
-      })
+        description: 'Signup successful. Verify your email address.',
+      });
       const actionCodeSettings = {
-        url: `${base_url}/verify`,  // your Next.js page URL
+        url: `${base_url}/verify`, // your Next.js page URL
         handleCodeInApp: true,
       };
       await sendEmailVerification(user, actionCodeSettings);
@@ -161,6 +194,39 @@ const RecruitRadarContextProvider = ({
       setButtonColor('bg-recPrimary');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleLoginSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSignInError(null);
+    setLoginLoading(true);
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      const user = userCredential.user;
+      if (!user.emailVerified) {
+        toast({
+          description: 'Email verification failed/email not verified'
+        })
+        return;
+      }
+      setRRUser(user);
+      toast({
+        description: 'Login successful!',
+      });
+      router.push('/home');
+      setLoginEmail('');
+      setLoginPassword('');
+    } catch (error: any) {
+      setSignInError(error.message);
+      setButtonColor('bg-recPrimary');
+    } finally {
+      setLoginLoading(false);
     }
   };
 
@@ -185,7 +251,14 @@ const RecruitRadarContextProvider = ({
         setShowAlert,
         rRUser,
         resendEmail,
-        loginEmail, loginPassword, setLoginEmail, setLoginPassword, signInError
+        loginEmail,
+        loginPassword,
+        setLoginEmail,
+        setLoginPassword,
+        signInError,
+        loginLoading,
+        handleLoginSubmit,
+        providerUser
       }}
     >
       {children}
