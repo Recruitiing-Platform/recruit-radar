@@ -3,8 +3,10 @@ import SignUpFormComponent from './SignUpFormComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import GoogleSvgComponent from '../SvgComponents/GoogleSvgComponent';
 import { BsTwitterX } from 'react-icons/bs';
+import { useRouter } from 'next/navigation';
 
 const RightSideSignUpComponent = () => {
+  const router = useRouter();
   const { signInWithGoogle, signInWithTwitter, googleLoading, twitterLoading } = useRecruitRadarHook();
 
   return (
@@ -20,7 +22,7 @@ const RightSideSignUpComponent = () => {
 
         <SignUpFormComponent />
 
-        <p className="text-center text-recSecondary text-xs mb-6 md:mb-2 lg:mb-6 mt-3 md:mt-0 lg:mt-3">
+        <p className="text-center text-recSecondary text-xs mb-6 md:mb-2 lg:mb-4 mt-3 md:mt-0 lg:mt-3">
           By continuing you accept our&nbsp;
           <span className="underline cursor-pointer hover:font-recBold hover:text-recDark">
             terms and conditions
@@ -32,13 +34,13 @@ const RightSideSignUpComponent = () => {
           .
         </p>
 
-        <div className="relative my-6 md:my-2 lg:my-6 flex items-center justify-center">
+        <div className="relative my-6 md:my-2 lg:my-4 flex items-center justify-center">
           <hr className="w-1/2 border-0 mt-3 mb-3 h-px bg-recDark" />
           <span className="px-2 text-sm text-recDark bg-white">Or</span>
           <hr className="w-1/2 border-0 mt-3 mb-3 h-px bg-recDark" />
         </div>
 
-        <div className="flex flex-col space-y-3 mb-6">
+        <div className="flex flex-col space-y-3 mb-2">
           <div
             className={`flex items-center gap-3 justify-center bg-gray-200 text-recSecondary font-recSemiBold py-2 px-4 rounded-lg border border-recSecondary hover:bg-recPrimary/50 hover:border-recPrimary/50 transition-all duration-300 hover:scale-105 ${googleLoading ? 'cursor-not-allowed border-recPrimary/50 bg-recPrimary/50' : 'cursor-pointer'}`}
             onClick={signInWithGoogle}
@@ -54,6 +56,8 @@ const RightSideSignUpComponent = () => {
             {twitterLoading ? <span>Loading...</span> : <span>Sign in with Twitter/X</span>}
           </div>
         </div>
+
+        <p className='text-[#000030] mb-6 text-textSmall text-center'>Already have an account? <span className='font-recSemiBold cursor-pointer hover:font-recBold hover:underline transition-all duration-300' onClick={() => router.push('/login')}>Login here</span></p>
       </div>
     </div>
   );
