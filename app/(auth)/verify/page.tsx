@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { applyActionCode } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { auth } from '@/lib/firebase'; // import your Firebase setup
+import { auth } from '@/lib/firebase';
 import { FaEnvelopeOpenText } from 'react-icons/fa';
 import { ModeToggle } from '@/components/ModeToggle';
 
