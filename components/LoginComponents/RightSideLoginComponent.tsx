@@ -4,10 +4,12 @@ import { BsTwitterX } from 'react-icons/bs';
 import LoginFormComponent from '@/components/LoginComponents/LoginFormComponent';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 
 const RightSideLoginComponent = () => {
+  const {googleLoading, twitterLoading, signInWithGoogle, signInWithTwitter} = useRecruitRadarHook();
   const router = useRouter();
-  
+
   return (
     <div className="lg:w-2/5 relative bg-recLight p-4 text-center text-recDark">
       <LoginSvgComponent />
@@ -18,7 +20,14 @@ const RightSideLoginComponent = () => {
           <p className="font-recMedium">Welcome back to Recruit Radar</p>
         </div>
 
-        <button className="border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall inline-flex  item-center justify-center gap-2 font-recRegular min-h-auto transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-recPrimary/50 hover:border-recPrimary/50">
+        <button
+          className={`border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall inline-flex item-center justify-center gap-2 font-recRegular min-h-auto transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-recPrimary/50 hover:border-recPrimary/50 ${
+            googleLoading
+              ? 'cursor-not-allowed border-recPrimary/50 bg-recPrimary/50'
+              : 'cursor-pointer'
+          }`}
+          onClick={signInWithGoogle}
+        >
           <span className="">
             <Image
               src="/googleicon.png"
@@ -29,7 +38,14 @@ const RightSideLoginComponent = () => {
           </span>
           <p>Login with Google</p>
         </button>
-        <div className="border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall flex  item-center justify-center gap-2 font-recRegular min-h-auto transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-recPrimary/50 hover:border-recPrimary/50 cursor-pointer">
+        <div
+          className={`border-2 border-recLightGrey font-textBody rounded-md mb-2 py-2 text-textSmall flex  item-center justify-center gap-2 font-recRegular min-h-auto transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-recPrimary/50 hover:border-recPrimary/50 ${
+            twitterLoading
+              ? 'cursor-not-allowed border-recPrimary/50 bg-recPrimary/50'
+              : 'cursor-pointer'
+          }`}
+          onClick={signInWithTwitter}
+        >
           <BsTwitterX size={20} />
           <span>Login with Twitter/X</span>
         </div>
@@ -65,12 +81,11 @@ const RightSideLoginComponent = () => {
           </p>
           <p className="text-textSmall">
             Don’t have an account?{' '}
-            <span
-              onClick={() => router.push('/signup')}
+            <Link href='/signup'
               className="font-recSemiBold hover:underline cursor-pointer"
             >
               Sign up
-            </span>
+            </Link>
           </p>
         </footer>
       </div>
