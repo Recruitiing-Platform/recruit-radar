@@ -4,7 +4,7 @@ import RecruitRadarContextProvider from '@/contexts/useRecruitRadarContext';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'RecruitRadar | Signup',
+  title: 'RecruitRadar | Login',
   description: 'Signup to begin with RecruitRadar',
 };
 
