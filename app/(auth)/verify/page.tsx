@@ -20,10 +20,6 @@ const VerifyPage = () => {
         'mode'
       ) as string;
 
-      const mode = new URLSearchParams(window.location.search).get(
-        'mode'
-      ) as string;
-
       if (!oobCode) {
         router.push('/error');
       }
