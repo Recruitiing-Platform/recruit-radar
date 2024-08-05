@@ -10,7 +10,9 @@ import {
   User,
   updateProfile,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  confirmPasswordReset
 } from 'firebase/auth';
 import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useEffect, useState } from 'react';
@@ -28,12 +30,12 @@ const RecruitRadarContextProvider = ({
   const pathname = usePathname();
 
   const [rRUser, setRRUser] = useState<User | null>(null);
-  const [providerUser, setProviderUser] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [buttonColor, setButtonColor] = useState<string>('bg-recPrimary');
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [pwdResetEmail, setPwdResetEmail] = useState<string>('');
   const [loginEmail, setLoginEmail] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -41,7 +43,10 @@ const RecruitRadarContextProvider = ({
   const [googleLoading, setGoogleLoading] = useState<boolean>(false);
   const [twitterLoading, setTwitterLoading] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [pwdResetAlert, setPwdResetAlert] = useState<boolean>(false);
   const [signInError, setSignInError] = useState<string | null>(null);
+  const [newPassword, setNewPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
 
   const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -70,10 +75,8 @@ const RecruitRadarContextProvider = ({
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
         setRRUser(user);
-        console.log('User is signed in:', user);
       } else {
         setRRUser(null);
-        console.log('No user is signed in.');
       }
     });
 
@@ -101,9 +104,9 @@ const RecruitRadarContextProvider = ({
     }
   };
 
-  const validateEmail = (email: string): boolean => {
+  const validateEmail = (str: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return emailRegex.test(str);
   };
 
   const validatePassword = (password: string): boolean => {
@@ -126,6 +129,59 @@ const RecruitRadarContextProvider = ({
       }
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  const handlePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    if (!validateEmail(pwdResetEmail)) {
+      setError('Invalid email format.');
+      setLoading(false);
+      return;
+    }
+    try {
+      const actionCodeSettings = {
+        url: `${base_url}/verify`, // your Next.js page URL
+        handleCodeInApp: true,
+      };
+      await sendPasswordResetEmail(auth, pwdResetEmail, actionCodeSettings);
+      setPwdResetAlert(true);
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const handleReset = async () => {
+    const oobCode = new URLSearchParams(window.location.search).get(
+        'oobCode'
+      ) as string;
+
+    if (!oobCode) {
+      setError('Invalid request.');
+      return;
+    }
+
+    if (!validatePassword(newPassword)) {
+      setError('Invalid format. Password must contain at least one uppercase, one lowercase, one number, one special character, and be at least 8 characters long.');
+    }
+
+    if (newPassword !== confirmPassword) {
+      setError('Passwords do not match.')
+    }
+
+    try {
+      await confirmPasswordReset(auth, oobCode as string, newPassword);
+      toast({
+        description: 'Password has been reset successfully. Log in with new password now.',
+      })
+      router.push('/login');
+    } catch (error: any) {
+      setError(error.message);
     }
   };
 
@@ -223,7 +279,11 @@ const RecruitRadarContextProvider = ({
       setLoginEmail('');
       setLoginPassword('');
     } catch (error: any) {
-      setSignInError(error.message);
+      console.log(error.message);
+      if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+        setSignInError('Account already exists. Please log in.')
+      }
+      // setSignInError(error.message);
       setButtonColor('bg-recPrimary');
     } finally {
       setLoginLoading(false);
@@ -258,7 +318,14 @@ const RecruitRadarContextProvider = ({
         signInError,
         loginLoading,
         handleLoginSubmit,
-        providerUser
+        handleReset,
+        pwdResetEmail,
+        setPwdResetEmail,
+        pwdResetAlert,
+        setPwdResetAlert,
+        handlePasswordReset,
+        setNewPassword, 
+        setConfirmPassword
       }}
     >
       {children}
