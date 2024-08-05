@@ -1,9 +1,14 @@
 'use client';
 
-import RightSidePasswordReset from "@/components/RightSidePasswordReset";
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
+import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
+import RightSideResetComponent from '@/components/RightSideResetComponent';
 
-const PasswordResetPage = () => {
+const ResetPasswordPage = () => {
+  const router = useRouter();
+  const { error, handleReset } = useRecruitRadarHook();
+
   return (
     <div className="lg:flex h-screen">
       <div className="w-3/5 pl-16 bg-[url('/pwdreset.jpg')] bg-cover bg-no-repeat hidden lg:block">
@@ -18,9 +23,9 @@ const PasswordResetPage = () => {
         </div>
         </div>
       </div>
-      <RightSidePasswordReset />
+      <RightSideResetComponent />
     </div>
-  )
-}
+  );
+};
 
-export default PasswordResetPage
+export default ResetPasswordPage;

@@ -16,15 +16,26 @@ const VerifyPage = () => {
         'oobCode'
       ) as string;
 
+      const mode = new URLSearchParams(window.location.search).get(
+        'mode'
+      ) as string;
+
       if (!oobCode) {
         router.push('/error');
       }
 
       try {
-        await applyActionCode(auth, oobCode);
-        router.push('/success');
+        if (mode === 'resetPassword') {
+          router.push(`/reset?oobCode=${oobCode}`);
+        } else if (mode === 'verifyEmail') {
+          await applyActionCode(auth, oobCode);
+          router.push('/success'); 
+        } else {
+          router.push('/error');
+        }
       } catch (error) {
-        console.error('Error verifying email:', error);
+        console.error('Error processing the action:', error);
+        router.push('/error');
       }
     };
 
