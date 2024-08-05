@@ -15,6 +15,10 @@ const VerifyPage = () => {
       const oobCode = new URLSearchParams(window.location.search).get(
         'oobCode'
       ) as string;
+      
+      const mode = new URLSearchParams(window.location.search).get(
+        'mode'
+      ) as string;
 
       const mode = new URLSearchParams(window.location.search).get(
         'mode'
