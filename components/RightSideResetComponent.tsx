@@ -31,7 +31,7 @@ const RightSideResetComponent = () => {
       </div>
       <div className="md:py-6 flex flex-col h-full justify-center px-4 md:px-40  dark:bg-recDark dark:text-recAccent lg:px-12 pt-5 bg-recLight lg:dark:bg-recLight">
         <div className='text-left pb-10'>
-          <h1 className="text-headerSix font-recSemiBold text-recDark pb-1 dark:text-recLightGrey lg:dark:text-recDark ">
+          <h1 className="text-headerSix font-recSemiBold text-recDark pb-1 dark:text-recLightGrey lg:dark:text-recDark pt-20 md:pt-0">
             Reset your Recruiter Rader Password
           </h1>
           <p className="font-recMedium text-recBody dark:text-recSubtle lg:dark:text-recBody">
