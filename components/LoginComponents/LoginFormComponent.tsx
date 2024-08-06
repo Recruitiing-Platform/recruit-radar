@@ -77,7 +77,7 @@ const LoginFormComponent = () => {
       </div>
 
       <p className="text-left mb-4 text-textSmall font-recSemiBold">
-        <Link href="/forgot-password" className="hover:underline">
+        <Link href="/password-reset" className="hover:underline">
           Forgot password?
         </Link>
       </p>
