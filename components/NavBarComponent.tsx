@@ -32,7 +32,6 @@ const NavBarComponent = () => {
         scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
       }`}
     >
-
       {/* Logo */}
       <Link href="/" className="hidden dark:flex">
         <Image

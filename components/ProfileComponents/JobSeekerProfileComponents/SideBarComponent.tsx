@@ -1,0 +1,217 @@
+'use client';
+
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from '@/components/ui/resizable';
+import { BsFillLayersFill } from 'react-icons/bs';
+import { FaUserCircle } from 'react-icons/fa';
+import { MdAssignment } from 'react-icons/md';
+import { IoBookmarksSharp, IoLogOutOutline } from 'react-icons/io5';
+import { IoMdNotifications, IoMdSettings } from 'react-icons/io';
+import { useState } from 'react';
+import OverviewComponent from './OverviewComponent';
+import JobProfileComponent from './JobProfileComponent';
+import AppliedJobComponent from './AppliedJobComponent';
+import SavedJobComponent from './SavedJobComponent';
+import JobAlertComponent from './JobAlertComponent';
+import SettingsComponent from './SettingsComponent';
+
+const SideBarComponent = () => {
+  const [overview, setOverview] = useState<boolean>(false);
+  const [profile, setProfile] = useState<boolean>(true);
+  const [appliedJobs, setAppliedJobs] = useState<boolean>(false);
+  const [savedJobs, setSavedJobs] = useState<boolean>(false);
+  const [jobAlerts, setJobAlerts] = useState<boolean>(false);
+  const [settings, setSettings] = useState<boolean>(false);
+
+  const handleClickOverview = () => {
+    setOverview(true);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+  }
+
+  const handleClickProfile = () => {
+    setProfile(true);
+    setOverview(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+  }
+
+  const handleClickAppliedJobs = () => {
+    setAppliedJobs(true);
+    setOverview(false);
+    setProfile(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+  }
+
+  const handleClickSavedJobs = () => {
+    setSavedJobs(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+  }
+
+  const handleClickJobAlerts = () => {
+    setJobAlerts(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setSettings(false);
+  }
+
+  const handleClickSettings = () => {
+    setSettings(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+  }
+
+  return (
+    <div className="z-50">
+      <ResizablePanelGroup
+        direction="horizontal"
+        className="pt-1 pl-10 dark:bg-[#000611] bg-recLight"
+      >
+        <ResizablePanel defaultSize={20}>
+          <div className="p-6 pt-14">
+            <h1 className="font-recMedium text-[12px] py-2 mb-5">
+              JOB SEEKER’S DASHBOARD
+            </h1>
+            <div className="space-y-2.5">
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  overview ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickOverview}
+              >
+                <BsFillLayersFill color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    overview
+                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Overview
+                </span>
+              </div>
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  profile ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickProfile}
+              >
+                <FaUserCircle color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    profile ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Job Seeker’s Profile
+                </span>
+              </div>
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  appliedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickAppliedJobs}
+              >
+                <MdAssignment color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    appliedJobs
+                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Applied Jobs
+                </span>
+              </div>
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  savedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickSavedJobs}
+              >
+                <IoBookmarksSharp color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    savedJobs
+                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Saved Jobs
+                </span>
+              </div>
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  jobAlerts ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickJobAlerts}
+              >
+                <IoMdNotifications color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    jobAlerts
+                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Job Alert
+                </span>
+              </div>
+              <div
+                className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
+                  settings ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                }`}
+                onClick={handleClickSettings}
+              >
+                <IoMdSettings color="#556177" />
+                <span
+                  className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
+                    settings
+                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      : 'text-[#556177] font-recRegular'
+                  }`}
+                >
+                  Settings
+                </span>
+              </div>
+              <div className='flex items-center gap-3 py-2 cursor-pointer transition-all transform duration-300 hover:font-recBold dark:hover:font-recBold hover:pl-2 pt-96'>
+                <IoLogOutOutline color='#E81010' />
+                <span className='text-recError font-recSemiBold text-textSmall'>Logout</span>
+              </div>
+            </div>
+          </div>
+        </ResizablePanel>
+        <ResizableHandle className="border-r border-recBody" withHandle />
+        <ResizablePanel defaultSize={80}>
+          {overview && <OverviewComponent />}
+          {profile && <JobProfileComponent />}
+          {appliedJobs && <AppliedJobComponent />}
+          {savedJobs && <SavedJobComponent />}
+          {jobAlerts && <JobAlertComponent />}
+          {settings && <SettingsComponent />}
+        </ResizablePanel>
+      </ResizablePanelGroup>
+    </div>
+  );
+};
+
+export default SideBarComponent;
