@@ -10,9 +10,7 @@ import { navData } from '@/data';
 import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import MobileNavComponent from './MobileNavComponent';
 
-type Props = {};
-
-const NavBarComponent = (props: Props) => {
+const NavBarComponent = () => {
   const pathname = usePathname();
   const router = useRouter();
 
