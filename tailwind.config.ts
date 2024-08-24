@@ -130,6 +130,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      boxShadow: {
+        'employer': "62px 137px 42px 0px rgba(255, 255, 255, 0.00), 40px 88px 39px 0px rgba(255, 255, 255, 0.01), 22px 49px 33px 0px rgba(255, 255, 255, 0.05), 10px 22px 24px 0px rgba(255, 255, 255, 0.09), 2px 5px 13px 0px rgba(255, 255, 255, 0.10);",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

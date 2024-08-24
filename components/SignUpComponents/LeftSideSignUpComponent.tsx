@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ModeToggle } from '../ModeToggle';
-import { useEffect, useState } from 'react';
-import { texts } from '@/data';
 import RightSideTextComponent from './RightSideTextComponent';
 
 const LeftSideSignUpComponent = () => {

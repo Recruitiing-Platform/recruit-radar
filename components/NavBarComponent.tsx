@@ -9,6 +9,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { navData } from '@/data';
 import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import MobileNavComponent from './MobileNavComponent';
+import NavLogoComponent from './NavLogoComponent';
 
 const NavBarComponent = () => {
   const pathname = usePathname();
@@ -34,24 +35,7 @@ const NavBarComponent = () => {
     >
 
       {/* Logo */}
-      <Link href="/" className="hidden dark:flex">
-        <Image
-          src="/rr-dark.svg"
-          width={120}
-          height={30}
-          loading="lazy"
-          alt="RecruitRadar Logo"
-        />
-      </Link>
-      <Link href="/" className="dark:hidden">
-        <Image
-          src="/rr_light.svg"
-          width={120}
-          height={30}
-          loading="lazy"
-          alt="RecruitRadar Logo"
-        />
-      </Link>
+      <NavLogoComponent />
 
       {/* Nav Items */}
       <ul className="flex h-16 items-center gap-7 shadow-[2px_2px_8px_0px_rgba(194,193,193,0.59)] dark:shadow-[2px_2px_4px_2px_rgba(198,198,198,0.07)] border border-recLightGrey dark:border-recSecondary rounded-full px-14">

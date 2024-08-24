@@ -1,4 +1,4 @@
-import { CategoryDataInterface, FooterDataInterface, TestimonialDataInterface } from './interfaces/HomepageInterface';
+import { CategoryDataInterface, EmployerDataInterface, EmployerHeroInterface, FooterDataInterface, TestimonialDataInterface } from './interfaces/HomepageInterface';
 import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
@@ -260,3 +260,54 @@ export const texts: Array<string> = [
   'Professionally tailored resume',
   'AI powered applicant tracking system',
 ];
+
+export const employerSliderImages: Array<EmployerDataInterface> = [
+  {
+    image: "/mail-chimp.png",
+    altText: "mail chimp logo"
+  },
+  {
+    image: "/better-uptime.png",
+    altText: "better uptime logo"
+  },
+  {
+    image: "/slack.png",
+    altText: "slack logo"
+  },
+  {
+    image: "/jira-software.png",
+    altText: "jira software logo"
+  },
+  {
+    image: "/gitbook.png",
+    altText: "gitbook logo"
+  },
+  {
+    image: "/better-uptime.png",
+    altText: "better uptime logo"
+  },
+]
+
+export const employerHeroData: Array<EmployerHeroInterface> = [
+  {
+    image: "/red-checkmark.png",
+    altText: "red checkmark",
+    size: 40,
+    heading: "Guaranteed",
+    bodyText: "Make informed decisions with recruiter radar features.",
+  },
+  {
+    image: "/firmware-amico.png",
+    altText: "firmware",
+    size: 30,
+    heading: "Streamlined",
+    bodyText: "Enjoy an effortless hiring process with intuitive tools and seamless workflows.",
+  },
+  {
+    image: "/chart-inject.png",
+    altText: "chart inject",
+    size: 30,
+    heading: "Top-notch",
+    bodyText: "Access top-tier talent and<br></br> enhance your team with candidates that match your role"
+  },
+]
