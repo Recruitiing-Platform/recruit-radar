@@ -28,13 +28,24 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Location</label>
-              <input
-                type="text"
-                className="w-full p-2 border rounded"
-                placeholder="Online"
-              />
-            </div>
+  <label className="block text-recBody mb-2">Location</label>
+  <div className="relative">
+    <select className="w-full p-2 border rounded appearance-none pr-8" defaultValue="">
+      <option value="" disabled hidden>
+        Online
+      </option>
+      <option value="online">Online</option>
+      <option value="hybrid">Hybrid</option>
+      <option value="onsite">Onsite</option>
+    </select>
+    <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+</div>
+
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
@@ -101,7 +112,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
                 type="button"
                 className="border border-recPrimary text-recPrimary px-4 py-2 rounded"
               >
-                Edit
+                Cancel
               </button>
               <button
                 type="submit"
