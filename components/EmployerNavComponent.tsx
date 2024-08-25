@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import NavLogoComponent from './NavLogoComponent';
 import { ModeToggle } from './ModeToggle';
 import { Menu } from 'lucide-react';
+import EmployerMobileNavComponent from './EmployerMobileNavComponent';
 
 type Props = {};
 
@@ -20,9 +20,9 @@ const EmployerNavComponent = (props: Props) => {
   }, []);
 
   return (
-    <div>
+    <div className='md:pr-8 lg:pr-0'>
       <nav
-        className={`flex dark:bg-[#000611] bg-recLight z-[100] lg:px-10 xxl:px-20 3xl:px-60 h-32  items-center lg:justify-around justify-between px-4 sticky top-0 ${
+        className={`sm:hidden lg:flex dark:bg-[#000611] bg-recLight z-[100] lg:px-10 xxl:px-20 3xl:px-60 h-32  items-center lg:justify-around justify-between px-4 sticky top-0 ${
           scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
         } `}
       >
@@ -55,6 +55,7 @@ const EmployerNavComponent = (props: Props) => {
           </div>
         </div>
       </nav>
+      <EmployerMobileNavComponent />
     </div>
   );
 };
