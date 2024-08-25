@@ -21,7 +21,7 @@ const SignUpFormComponent = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
-    <form className="space-y-4 mt-7 md:mt-2 lg:mt-5" onSubmit={handleSubmit}>
+    <form className="space-y-4 mt-7 md:mt-2 lg:mt-3" onSubmit={handleSubmit}>
       <InputField
         id="name"
         label="Enter Name"
