@@ -10,6 +10,7 @@ import { NavDataInterface } from '@/interfaces/HomepageInterface';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
+import NavLogoComponent from './NavLogoComponent';
 
 type Props = {};
 
@@ -49,24 +50,7 @@ const MobileNavComponent = (props: Props) => {
           }`}
       >
         {/* Logo */}
-        <Link href="/" className="hidden dark:flex">
-          <Image
-            src="/rr-dark.svg"
-            width={120}
-            height={30}
-            loading="lazy"
-            alt="RecruitRadar Logo"
-          />
-        </Link>
-        <Link href="/" className="dark:hidden">
-          <Image
-            src="/rr_light.svg"
-            width={120}
-            height={30}
-            loading="lazy"
-            alt="RecruitRadar Logo"
-          />
-        </Link>
+        <NavLogoComponent />
 
         <div className="flex gap-3 items-center">
           {/* Change mode component */}
