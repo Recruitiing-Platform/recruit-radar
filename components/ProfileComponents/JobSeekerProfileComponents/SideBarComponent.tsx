@@ -17,6 +17,7 @@ import AppliedJobComponent from './AppliedJobComponent';
 import SavedJobComponent from './SavedJobComponent';
 import JobAlertComponent from './JobAlertComponent';
 import SettingsComponent from './SettingsComponent';
+import LogoutAlertDialogComponent from '@/components/LogoutAlertDialogComponent';
 
 const SideBarComponent = () => {
   const [overview, setOverview] = useState<boolean>(false);
@@ -193,10 +194,7 @@ const SideBarComponent = () => {
                   Settings
                 </span>
               </div>
-              <div className='flex items-center gap-3 py-2 cursor-pointer transition-all transform duration-300 hover:font-recBold dark:hover:font-recBold hover:pl-2 pt-96'>
-                <IoLogOutOutline color='#E81010' />
-                <span className='text-recError font-recSemiBold text-textSmall'>Logout</span>
-              </div>
+              <LogoutAlertDialogComponent />
             </div>
           </div>
         </ResizablePanel>
