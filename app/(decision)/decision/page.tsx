@@ -3,9 +3,6 @@
 import { toast } from '@/components/ui/use-toast';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { onAuthStateChanged, User } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
 
 type Props = {};
 

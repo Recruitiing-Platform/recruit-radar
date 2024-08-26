@@ -1,36 +1,13 @@
-// pages/profile.tsx
-
-import React, { ChangeEvent } from "react";
-
-const DateInput: React.FC = () => {
-  const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {};
-
-  const formatDate = (date: string): string => {
-    const [year, month, day] = date.split("-");
-    return `${month}/${day}/${year}`;
-  };
-
-  return (
-    <div className="w-1/2">
-      <label className="block text-recBody mb-2">Date of Birth</label>
-      <input
-        type="date"
-        className="w-full md:w-full p-2 border rounded"
-        onChange={handleDateChange}
-      />
-      <div className="mt-2 text-recBody"></div>
-    </div>
-  );
-};
+import DateInput from './DateInputComponent';
 
 const MainProfileComponent: React.FC = () => {
   return (
-    <div className="ml-5 mr-10 rounded-3xl mt-5 p-5 border border-recSubtle">
+    <div className="ml-5 mr-10 rounded-3xl my-5 p-5 border border-recSubtle">
       <form className="bg-white p-6 rounded shadow-md">
         {/* Main Container */}
         <div className="flex flex-col md:flex-row">
           {/* Left Column: Text */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 pr-5">
             <p className="text-recBody mb-4">
               Tell us about yourself, to let your next employer know about you
             </p>
@@ -97,7 +74,7 @@ const MainProfileComponent: React.FC = () => {
                   </option>
                   {Array.from({ length: 10 }, (_, i) => (
                     <option key={i + 1} value={i + 1}>
-                      {i + 1} year{i + 1 > 1 ? "s" : ""}
+                      {i + 1} year{i + 1 > 1 ? 's' : ''}
                     </option>
                   ))}
                 </select>

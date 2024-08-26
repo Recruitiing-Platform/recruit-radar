@@ -6,8 +6,6 @@ import { Toaster } from '@/components/ui/toaster';
 import RecruitRadarContextProvider from '@/contexts/useRecruitRadarContext';
 import NavBarComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/NavBarComponent';
 
-const manrope = Manrope({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
   title: 'RecruitRadar | Employee',
   description: 'Connecting you to your next job',

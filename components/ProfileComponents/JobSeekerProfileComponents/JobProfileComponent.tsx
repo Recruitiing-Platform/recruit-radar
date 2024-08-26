@@ -15,7 +15,7 @@ const JobProfileComponent = (props: Props) => {
       </h1>
       <Tabs
         defaultValue="profile"
-        onValueChange={(value) => setActiveTab(value)}
+        onValueChange={(value: string) => setActiveTab(value)}
         className=""
       >
         <TabsList className="grid w-full grid-cols-4">

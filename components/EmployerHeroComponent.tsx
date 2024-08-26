@@ -64,12 +64,14 @@ const EmployerHeroComponent = (props: Props) => {
             alt="image of hiring"
             width={600}
             height={200}
+            unoptimized
           />
           <Image className='dark:hidden flex'
             src="/hiring.gif"
             alt="image of hiring"
             width={600}
             height={200}
+            unoptimized
           />
         </div>
         <div>
