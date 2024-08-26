@@ -290,6 +290,11 @@ const RecruitRadarContextProvider = ({
     }
   };
 
+  const handleLogout = () => {
+    setRRUser(null);
+    router.push('/login')
+  }
+
   return (
     <RecruitRadarContext.Provider
       value={{
@@ -325,7 +330,8 @@ const RecruitRadarContextProvider = ({
         setPwdResetAlert,
         handlePasswordReset,
         setNewPassword, 
-        setConfirmPassword
+        setConfirmPassword,
+        handleLogout
       }}
     >
       {children}

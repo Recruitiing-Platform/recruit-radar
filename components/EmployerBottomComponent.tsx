@@ -126,6 +126,7 @@ const EmployerBottomComponent = (props: Props) => {
             alt="Messaging"
             width={500}
             height={200}
+            unoptimized
           />
           <Image
             className='dark:hidden flex'
@@ -133,6 +134,7 @@ const EmployerBottomComponent = (props: Props) => {
             alt="Messaging"
             width={500}
             height={200}
+            unoptimized
           />
         </div>
         <div className="lg:w-1/2 text-center lg:text-left px-5">
