@@ -6,6 +6,7 @@ type Props = {
   iconFill: string;
   className?: string;
   onClick: () => void;
+  type?: string;
 };
 
 const ButtonComponent = (props: Props) => {

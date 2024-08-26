@@ -36,3 +36,21 @@ export interface TestimonialDataInterface {
     job: string;
     testimony: string;
 }
+
+export interface FooterDataInterface {
+    header: string;
+    subheaders: Array<string>
+}
+
+export interface EmployerDataInterface {
+    image: string;
+    altText: string;
+}
+
+export interface EmployerHeroInterface {
+    image: string;
+    altText: string;
+    size: number;
+    heading: string;
+    bodyText: string;
+}

@@ -45,9 +45,9 @@ const JobsComponent = (props: Props) => {
       </div>
 
       {/* Create Button */}
-      <Button className='block mx-auto w-60 3xl:w-72 h-12 rounded-3xl font-recMedium text-headerSix 3xl:text-headerFive hover:scale-105 ease-in-out transition transform duration-300' style={{color: "#F0F0F0"}}
+      <Button className='block mx-auto w-60 3xl:w-72 h-12 rounded-md font-recMedium text-headerSix 3xl:text-headerFive hover:scale-105 ease-in-out transition transform duration-300' style={{color: "#F0F0F0"}}
        onClick={() => router.push('/signup')}
-      >Create account</Button>
+      >See more</Button>
     </div>
   );
 };
