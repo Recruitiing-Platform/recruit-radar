@@ -131,4 +131,8 @@
     animation: blurAnimation 3s ease-in-out infinite;
   }
 
+  .scrolling-content {
+    animation: scroll 10s linear infinite;
+  }
+
   

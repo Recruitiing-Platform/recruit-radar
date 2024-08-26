@@ -13,16 +13,16 @@ const RightSideSignUpComponent = () => {
     <div className="flex-1 flex flex-col justify-center items-center md:pt-2 lg:pt-0 md:w-[50%] bg-recLight px-4 md:px-8 relative lg:static">
       <div className="absolute inset-0 bg-recLightGrey md:bg-transparent opacity-10 md:opacity-100 md:hidden"></div>
       <div className="relative z-10 md:max-w-md">
-        <h2 className="text-[#000030] text-headerThree mt-8 md:mt-0 lg:text-headerTwo mb-2 text-center font-recBold">
+        <h2 className="text-[#000030] text-headerThree mt-8 md:mt-0 lg:text-headerTwo mb-1 text-center font-recBold">
           Create Account
         </h2>
-        <p className="text-[#000030] text-textSmall md:text-[16px] mb-2 md:mb-0 lg:mb-2 text-center md:text-left font-recBold">
+        <p className="text-[#000030] text-textSmall md:text-[16px] mb-2 md:mb-0 lg:mb-1 text-center md:text-left font-recBold">
           Find your dream job, launch your career.
         </p>
 
         <SignUpFormComponent />
 
-        <p className="text-center text-recSecondary text-xs mb-6 md:mb-2 lg:mb-4 mt-3 md:mt-0 lg:mt-3">
+        <p className="text-center text-recSecondary text-xs mb-6 md:mb-2 lg:mb-2 mt-3 md:mt-0 lg:mt-1">
           By continuing you accept our&nbsp;
           <span className="underline cursor-pointer hover:font-recBold hover:text-recDark">
             terms and conditions
@@ -34,7 +34,7 @@ const RightSideSignUpComponent = () => {
           .
         </p>
 
-        <div className="relative my-6 md:my-2 lg:my-4 flex items-center justify-center">
+        <div className="relative my-6 md:my-2 flex items-center justify-center">
           <hr className="w-1/2 border-0 mt-3 mb-3 h-px bg-recDark" />
           <span className="px-2 text-sm text-recDark bg-white">Or</span>
           <hr className="w-1/2 border-0 mt-3 mb-3 h-px bg-recDark" />
