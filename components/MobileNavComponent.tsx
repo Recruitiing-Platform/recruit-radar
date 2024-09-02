@@ -74,7 +74,7 @@ const MobileNavComponent = (props: Props) => {
         <ul className="flex flex-col items-center justify-center gap-8 py-28">
           {navData.map((data: NavDataInterface) => (
             <>
-              <li
+              <li key={data?.name}
                 className={
                   pathname === data.link
                     ? `text-[20px] font-recSemiBold text-recAccent`

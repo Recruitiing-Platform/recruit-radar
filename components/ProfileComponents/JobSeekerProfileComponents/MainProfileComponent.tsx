@@ -1,9 +1,10 @@
+import React, { SetStateAction } from 'react';
 import DateInput from './DateInputComponent';
 
-const MainProfileComponent: React.FC = () => {
+const MainProfileComponent = () => {
   return (
-    <div className="ml-5 mr-10 rounded-3xl my-5 p-5 border border-recSubtle">
-      <form className="bg-white p-6 rounded shadow-md">
+    <div className="mx-5 rounded-3xl my-5 p-5 border border-recSubtle">
+      <form className="bg-white rounded shadow-md">
         {/* Main Container */}
         <div className="flex flex-col md:flex-row">
           {/* Left Column: Text */}
@@ -100,7 +101,7 @@ const MainProfileComponent: React.FC = () => {
               <label className="block text-recBody mb-2">Work Preference</label>
               <input
                 type="text"
-                className="w-full md:w-2/3 md:ml-auto p-2 border rounded"
+                className="w-full md:ml-auto p-2 border rounded"
                 placeholder="Hybrid"
               />
             </div>
@@ -109,11 +110,11 @@ const MainProfileComponent: React.FC = () => {
 
         {/* Bio Section */}
         <div className="mt-4 flex md:flex-row">
-          <div className="md:w-1/3"></div>
-          <div className="md:w-2/3">
+          <div className="hidden md:w-1/3"></div>
+          <div className="w-full md:w-2/3">
             <label className="block text-recBody mb-2">Bio</label>
             <textarea
-              className="w-full md:w-2/3 md:ml-auto p-2 mb-7 border rounded"
+              className="w-full md:w-full md:ml-auto p-2 mb-7 border rounded"
               placeholder="Tell us about yourself, your experience, what you do etc"
               rows={4}
             ></textarea>
@@ -173,6 +174,13 @@ const MainProfileComponent: React.FC = () => {
 
         {/* Buttons Section */}
         <div className="flex justify-end mt-4 space-x-4">
+          {/* <button
+            type="button"
+            className="bg-recAccent text-recPrimary border-2 border-recPrimary font-recSemiBold px-4 py-2 rounded"
+            // onClick={}
+          >
+            Back Home
+          </button> */}
           <button
             type="button"
             className="border border-recPrimary text-recPrimary px-4 py-2 rounded"
