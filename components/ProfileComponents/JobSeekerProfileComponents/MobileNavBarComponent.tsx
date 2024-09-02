@@ -201,7 +201,7 @@ const MobileNavBarComponent = (props: Props) => {
       </div>
       <div>
         {overview && <OverviewComponent />}
-        {profile && <NavSideBarComponent />}
+        {/* {profile && <NavSideBarComponent />} */}
         {appliedJobs && <AppliedJobComponent />}
         {savedJobs && <SavedJobComponent />}
         {jobAlerts && <JobAlertComponent />}
