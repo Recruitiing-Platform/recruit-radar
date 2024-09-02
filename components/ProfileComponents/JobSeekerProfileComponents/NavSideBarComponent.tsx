@@ -22,7 +22,7 @@ const NavSideBarComponent = (props: Props) => {
       )}
 
       {showProfile && (
-        <div className="pt-10 dark:bg-[#000611]">
+        <div className="pt-10 block md:hidden dark:bg-[#000611]">
           <h1 className="text-headerTwo font-recSemiBold pl-5 pb-10">
             Finish setting up your profile{' '}
           </h1>

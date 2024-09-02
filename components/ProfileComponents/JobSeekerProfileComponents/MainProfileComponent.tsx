@@ -4,7 +4,7 @@ import DateInput from './DateInputComponent';
 const MainProfileComponent = () => {
   return (
     <div className="mx-5 rounded-3xl my-5 p-5 border border-recSubtle">
-      <form className="bg-white rounded md:shadow-md">
+      <form className="bg-white rounded md:dark:shadow-md">
         {/* Main Container */}
         <div className="flex flex-col md:flex-row">
           {/* Left Column: Text */}

@@ -19,7 +19,7 @@ const ProfileHomeComponent = (props: Props) => {
         <JobSeekerProfileComponent />
       )}
       {showProfile && (
-        <div className="pt-10">
+        <div className="pt-10 hidden md:block">
           <h1 className="text-headerTwo font-recSemiBold pl-5 pb-10">
             Finish setting up your profile{' '}
           </h1>
