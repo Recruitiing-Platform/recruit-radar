@@ -28,26 +28,26 @@ const ProfileHomeComponent = (props: Props) => {
             onValueChange={(value: string) => setActiveTab(value)}
             className=""
           >
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="profile" className="flex-col">
+            <TabsList className="grid w-full grid-cols-4 bg-recLight dark:bg-[#000611]">
+              <TabsTrigger value="profile" className="flex-col dark:bg-[#000611]">
                 Profile{' '}
                 {activeTab === 'profile' && (
                   <span className="w-8 h-[2px] bg-recPrimary"></span>
                 )}
               </TabsTrigger>
-              <TabsTrigger value="cert" className="flex-col">
+              <TabsTrigger value="cert" className="flex-col dark:bg-[#000611]">
                 Certification{' '}
                 {activeTab === 'cert' && (
                   <span className="w-8 h-[2px] bg-recPrimary"></span>
                 )}
               </TabsTrigger>
-              <TabsTrigger value="experience" className="flex-col">
+              <TabsTrigger value="experience" className="flex-col dark:bg-[#000611]">
                 Experience{' '}
                 {activeTab === 'experience' && (
                   <span className="w-8 h-[2px] bg-recPrimary"></span>
                 )}
               </TabsTrigger>
-              <TabsTrigger value="education" className="flex-col">
+              <TabsTrigger value="education" className="flex-col dark:bg-[#000611]">
                 Education{' '}
                 {activeTab === 'education' && (
                   <span className="w-8 h-[2px] bg-recPrimary"></span>

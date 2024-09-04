@@ -375,3 +375,56 @@ export const profileDetailData: Array<ProfileDataInterface> = [
     subheader: 'Your skills will show up here'
   },
 ]
+
+export const overviewJobData: Array<any> = [
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "On-site",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Jan 8, 2024  6:28AM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Junior Graphic Designer",
+      jobLocation: "Hybrid",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Devops Engineer",
+      jobLocation: "Remote",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Hybrid",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+]

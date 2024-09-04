@@ -45,7 +45,7 @@ const SideBarComponent = () => {
         className="pt-1 pl-10 dark:bg-[#000611] bg-recLight hidden md:flex"
       >
         <ResizablePanel defaultSize={20} className="hidden md:flex">
-          <div className="p-6 pt-14">
+          <div className="lg:p-6 pt-14">
             <h1 className="font-recMedium text-[12px] py-2 mb-5">
               JOB SEEKER’S DASHBOARD
             </h1>
@@ -62,7 +62,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     overview
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight font-recSemiBold text-[#000]'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >
@@ -72,7 +72,7 @@ const SideBarComponent = () => {
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
                   profile
-                    ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recBold'
+                    ? 'bg-recLightGrey font-recSemiBold dark:bg-recSecondary pl-2'
                     : ''
                 }`}
                 onClick={handleClickProfile}
@@ -81,7 +81,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     profile
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight text-[#000] font-recSemiBold'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >
@@ -90,7 +90,7 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  appliedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                  appliedJobs ? 'bg-recLightGrey font-recSemiBold dark:bg-recSecondary pl-2' : ''
                 }`}
                 onClick={handleClickAppliedJobs}
               >
@@ -98,7 +98,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     appliedJobs
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight font-recSemiBold text-[#000]'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >
@@ -107,7 +107,7 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  savedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                  savedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold' : ''
                 }`}
                 onClick={handleClickSavedJobs}
               >
@@ -115,7 +115,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     savedJobs
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight text-[#000] font-recSemiBold'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >
@@ -124,7 +124,7 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  jobAlerts ? 'bg-recLightGrey dark:bg-recSecondary pl-2' : ''
+                  jobAlerts ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold' : ''
                 }`}
                 onClick={handleClickJobAlerts}
               >
@@ -132,7 +132,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     jobAlerts
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight text-[#000] font-recSemiBold'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >
@@ -149,7 +149,7 @@ const SideBarComponent = () => {
                 <span
                   className={`text-textSmall font-recRegular dark:hover:text-recLight hover:text-[#000] hover:font-recBold ${
                     settings
-                      ? 'dark:text-recLight text-[#000] font-[700]'
+                      ? 'dark:text-recLight text-[#000] font-recSemiBold'
                       : 'text-[#556177] font-recRegular'
                   }`}
                 >

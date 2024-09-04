@@ -38,8 +38,8 @@ const JobSeekerProfileComponent = () => {
       rRUser?.displayName.split(' ')[1][0] || 'CN';
 
   return (
-    <div className="p-10 flex justify-between gap-4">
-      <div className="w-[80%]">
+    <div className="md:p-5 lg:p-10 flex justify-between gap-4">
+      <div className="w-full lg:w-[80%]">
         <div className="flex justify-between border border-recSubtle/20 rounded-3xl px-5 pt-5 pb-14 mb-9">
           <div className="flex gap-5">
             <div className="relative">
@@ -164,7 +164,7 @@ const JobSeekerProfileComponent = () => {
         </div>
       </div>
 
-      <div className="space-y-20">
+      <div className="space-y-20 hidden lg:block">
         <div className="p-5 bg-[#D9D9D9] dark:bg-recDark h-fit rounded-[30px] shadow-md">
           <div className="flex justify-between pb-8">
             <div>
