@@ -9,7 +9,7 @@ const DateInput: React.FC = () => {
   };
 
   return (
-    <div className="w-1/2">
+    <div className="w-full">
       <label className="block text-recBody mb-2">Date of Birth</label>
       <input
         type="date"

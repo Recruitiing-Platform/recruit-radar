@@ -14,10 +14,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import LogoutAlertDialogComponent from '@/components/LogoutAlertDialogComponent';
+import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
+import MobileNavBarComponent from './MobileNavBarComponent';
 
 type Props = {};
 
 const NavBarComponent = (props: Props) => {
+  const { rRUser } = useRecruitRadarHook();
+
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -29,10 +34,15 @@ const NavBarComponent = (props: Props) => {
     return () => window.removeEventListener('scroll', handleNavBarScroll);
   }, []);
 
+  const avatarPicFallback = (rRUser?.displayName.split(' ')[0][0] + rRUser?.displayName.split(' ')[1][0]) || 'CN';
+
   return (
-    <nav className={`dark:bg-[#000611] bg-recLightGrey z-[100] h-20 flex items-center justify-between md:p-10 lg:px-14 sticky shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] top-0 ${
+    <>
+    <nav
+      className={`hidden dark:bg-[#000611] bg-recLightGrey z-[100] h-20 md:flex items-center justify-between md:p-10 lg:px-14 sticky shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)] top-0 ${
         scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
-      }`}>
+      }`}
+    >
       {/* Logo */}
       <Link href="/" className="hidden dark:flex">
         <Image
@@ -69,28 +79,36 @@ const NavBarComponent = (props: Props) => {
           <div className="w-2 h-2 rounded-full bg-recPrimary absolute top-0.5 right-0.5"></div>
         </div>
         <DropdownMenu>
-          <DropdownMenuTrigger className='outline-none border-none ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0'>
+          <DropdownMenuTrigger className="outline-none border-none ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0">
             <div className="flex items-center gap-2 outline-none border-none">
               <div>
                 <Avatar className="w-8 h-8">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
+                  <AvatarImage src={rRUser?.photoURL || "https://github.com/shadcn.png"} />
+                  <AvatarFallback>{avatarPicFallback}</AvatarFallback>
                 </Avatar>
               </div>
               <ChevronDown />
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="border-none bg-[#000]/50 space-y-2 z-[200] mt-5">
-            <DropdownMenuItem className='cursor-pointer hover:bg-recSecondary'>Edit Profile</DropdownMenuItem>
-            <DropdownMenuItem className='cursor-pointer hover:bg-recSecondary'>Notifications</DropdownMenuItem>
-            <DropdownMenuItem className="text-recError cursor-pointer hover:bg-recSecondary">
-              Log Out
+          <DropdownMenuContent className="border-none bg-recLightGrey dark:bg-[#000] space-y-2 z-[200]">
+            <DropdownMenuItem className="cursor-pointer hover:bg-recSecondary">
+              Edit Profile
             </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer hover:bg-recSecondary">
+              Notifications
+            </DropdownMenuItem>
+            <LogoutAlertDialogComponent>
+              <span className="px-2 py-2 block text-recError hover:text-recError dark:hover:text-recError hover:font-recBold cursor-pointer">
+                Log out
+              </span>
+            </LogoutAlertDialogComponent>
           </DropdownMenuContent>
         </DropdownMenu>
         <ModeToggle />
       </div>
     </nav>
+    <MobileNavBarComponent />
+    </>
   );
 };
 

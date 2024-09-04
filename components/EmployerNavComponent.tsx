@@ -22,9 +22,9 @@ const EmployerNavComponent = (props: Props) => {
   return (
     <div className='md:pr-8 lg:pr-0'>
       <nav
-        className={`sm:hidden lg:flex dark:bg-[#000611] bg-recLight z-[100] lg:px-10 xxl:px-20 3xl:px-60 h-32 items-center lg:justify-around justify-between px-4 sticky top-0 ${
-          scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
-        } `}
+        className={`sm:hidden lg:flex dark:bg-[#000611] bg-recLight z-[100] lg:px-10 xxl:px-20 3xl:px-60 h-32 flex items-center justify-between sticky top-0 ${
+        scrolled ? 'shadow-[2px_2px_2px_2px_rgba(198,198,198,0.07)]' : ''
+      }`}
       >
         <NavLogoComponent />
         <div>
