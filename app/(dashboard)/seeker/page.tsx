@@ -1,11 +1,124 @@
-import React from 'react'
+"use client";
+import { useInView } from "react-intersection-observer";
 
-type Props = {}
+import React, { useState } from "react";
+import Image from "next/image";
+import FooterComponent from "@/components/FooterComponent";
+import CountUp from "react-countup";
+import { useRouter } from "next/navigation";
+import JobSeekerNavComponent from "@/components/JobSeekerNavComponent";
+import { Button } from "@/components/ui/button";
+import JobSeekerHeroComponent from "@/components/JobSeekerHeroComponent";
+import JobSeekerBottomComponent from "@/components/JobSeekerBottomComponent";
 
-const JobSeekerPage = (props: Props) => {
+import ContinuousScrollComponent from "@/components/ContinuousScrollComponent";
+
+const JobSeeker: React.FC = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.4,
+  });
+
   return (
-    <div>JobSeekerPage</div>
-  )
-}
+    <div className="dark:bg-[#000611] min-h-screen font-sans">
+      <JobSeekerNavComponent />
+      <div className="flex flex-col w-full lg:flex-row text-center md:text-left mt-14 md:mt-24 lg:mt-14 xl:mt-24 justify-between items-center gap-10 md:px-10 lg:pl-20 lg:pr-10 xl:pl-32 xl:pr-14 px-4 3xl:pr-80 3xl:pl-96">
+        <div>
+          <h1 className="text-headerTwo lg:text-headerThree xl:text-[52px] md:text-[56px] font-recBold leading-[48px] md:leading-[64px] lg:leading-[48px] xl:leading-[64px] mt-4 pb-4">
+            <span className="">Discover the </span>
+            <br></br> perfect job that&apos;s
+            <br></br>
+            made for you.
+          </h1>
+          <p className="font-recMedium font-sans text-[14px] my-2 md:w-2/3 lg:pr-0 text-recBody">
+            Effortlessly navigate through job listings tailored to your skills
+            and preferences, and utilize our advanced search functionality to
+            find opportunities that match your career aspirations.
+          </p>
+          <Button className="text-[18px] py-2 px-2 rounded-md mt-4 w-48 hover:scale-105 transition-all transform duration-300 font-recRegular">
+            Search Jobs
+          </Button>
+        </div>
+        <div className="pl-7 md:pl-0">
+          <Image
+            src="/networking.svg"
+            alt="men in an office"
+            width={800}
+            height={400}
+          ></Image>
+        </div>
+      </div>
+      <div className="hidden md:flex">
+        <ContinuousScrollComponent />
+      </div>
+      <JobSeekerHeroComponent />
+      <JobSeekerBottomComponent />
+      <div
+        ref={ref}
+        className=" lg:grid dark:text-recLightGrey hidden grid-cols-3 items-center text-center my-10 mt-40"
+      >
+        <div>
+          <h2 className="font-recBold text-headerThree">
+            {inView ? (
+              <CountUp start={0} end={160} duration={2.5}></CountUp>
+            ) : null}
+            million+
+          </h2>
+          <p className="font-recMedium  text-headerFive">Verified jobs</p>
+        </div>
+        <div>
+          <h2 className="font-recBold text-headerThree">
+            {inView ? (
+              <CountUp
+                start={0}
+                end={1.5}
+                duration={2.5}
+                decimals={1}
+              ></CountUp>
+            ) : null}
+            million+
+          </h2>
+          <p className="font-recMedium  text-headerFive">Active job seekers</p>
+        </div>
+        <div>
+          <h2 className="font-recBold text-headerTwo">
+            {inView ? (
+              <CountUp start={0} end={90} duration={2.5}></CountUp>
+            ) : null}
+            %
+          </h2>
+          <p className="font-recMedium text-headerFive">Success stories</p>
+        </div>
+      </div>
 
-export default JobSeekerPage
+      <div className="mt-16 flex text-recLightGrey gap-4 justify-center pb-40 md:pr-5 lg:pr-0">
+        <div className="inline-block relative px-12 md:px-8 text-center">
+          <div
+            className="inline-block lg:bg-cover bg-center bg-cover md:px-14 md:py-10 lg:py-20 px-6 lg:px-32 py-6 bg-[url('/small-bg.png')] md:bg-[url('/opacity-bg.png')]"
+            style={{
+              borderRadius: "24px",
+            }}
+          >
+            <div className="flex md:flex-row flex-col md:gap-10 lg:gap-32 gap-2">
+              <div className="gap-4">
+                <h5 className=" lg:text-headerFive font-recSemiBold text-textBody">
+                  Ready to take your hiring to the next level?
+                </h5>
+                <p className="lg:text-textSmall font-recRegular text-[10px] ">
+                  Sign up for Recruit Radar now and start Your Free Recruit
+                  Radar Trial Today!
+                </p>
+              </div>
+              <Button className="md:text-[18px] w-64 md:w-44 lg:w-64 hover:scale-105 transition-all transform duration-300 mt-5 md:mt-0">
+                Get Started
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <FooterComponent />
+    </div>
+  );
+};
+
+export default JobSeeker;
