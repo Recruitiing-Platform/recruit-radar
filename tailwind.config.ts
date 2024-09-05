@@ -14,18 +14,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        sm: "280px",
-        sml: "320px",
-        smd: "425px",
-        mdm: "370px",
-        mdl: "600px",
-        md: "768px",
-        mdg: "900px",
-        lg: "1024px",
-        xl: "1280px",
-        xxl: "1440px",
-        "2xl": "1550px",
-        "3xl": "2560px",
+        "2xl": "1400px",
       },
     },
     screens: {
@@ -125,10 +114,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       boxShadow: {
         employer:

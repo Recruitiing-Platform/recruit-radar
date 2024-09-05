@@ -12,18 +12,13 @@ import {
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { IoLogOutOutline } from 'react-icons/io5';
 
-const LogoutAlertDialogComponent = () => {
+const LogoutAlertDialogComponent = ({children}: {children: React.ReactNode}) => {
   const { handleLogout } = useRecruitRadarHook();
 
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <div className="flex items-center gap-3 py-2 cursor-pointer transition-all transform duration-300 hover:font-recBold dark:hover:font-recBold hover:pl-2 pt-96">
-          <IoLogOutOutline color="#E81010" />
-          <span className="text-recError font-recSemiBold text-textSmall">
-            Logout
-          </span>
-        </div>
+        {children}
       </AlertDialogTrigger>
       <AlertDialogContent className='bg-recLightGrey dark:bg-recSecondary'>
         <AlertDialogHeader>

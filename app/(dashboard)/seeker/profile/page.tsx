@@ -1,15 +1,11 @@
+'use client';
+
 import SideBarComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/SideBarComponent'
 import React from 'react'
-import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-  } from "@/components/ui/tabs"
 
 type Props = {}
 
-const JobSeekerProfilePage = (props: Props) => {
+const JobSeekerProfileHomepage = (props: Props) => {
   return (
     <div>
         <SideBarComponent/>
@@ -17,4 +13,4 @@ const JobSeekerProfilePage = (props: Props) => {
   )
 }
 
-export default JobSeekerProfilePage
+export default JobSeekerProfileHomepage

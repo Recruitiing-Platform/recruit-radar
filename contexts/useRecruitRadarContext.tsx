@@ -15,7 +15,7 @@ import {
   confirmPasswordReset
 } from 'firebase/auth';
 import { usePathname, useRouter } from 'next/navigation';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useRef, useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 
 export const RecruitRadarContext = createContext<any>({});
@@ -47,6 +47,28 @@ const RecruitRadarContextProvider = ({
   const [signInError, setSignInError] = useState<string | null>(null);
   const [newPassword, setNewPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
+  const [showProfile, setShowProfile] = useState<boolean>(false);
+  const [showProfileHome, setShowProfileHome] = useState<boolean>(true);
+  const [overview, setOverview] = useState<boolean>(false);
+  const [profile, setProfile] = useState<boolean>(true);
+  const [appliedJobs, setAppliedJobs] = useState<boolean>(false);
+  const [savedJobs, setSavedJobs] = useState<boolean>(false);
+  const [jobAlerts, setJobAlerts] = useState<boolean>(false);
+  const [settings, setSettings] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target?.files && event.target?.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAvatarUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const [avatarUrl, setAvatarUrl] = useState<string>('');
 
   const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -130,6 +152,78 @@ const RecruitRadarContextProvider = ({
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleCameraClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current && fileInputRef.current?.click();
+    }
+  };
+
+  const handleClickOverview = () => {
+    setOverview(true);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+    setShowProfile(false);
+    setShowProfileHome(false);
+    setIsOpen(false);
+  };
+
+  const handleClickProfile = () => {
+    setProfile(true);
+    setOverview(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+    setShowProfile(false);
+    setShowProfileHome(true);
+    setIsOpen(false);
+  };
+
+  const handleClickAppliedJobs = () => {
+    setAppliedJobs(true);
+    setOverview(false);
+    setProfile(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+    setIsOpen(false);
+  };
+
+  const handleClickSavedJobs = () => {
+    setSavedJobs(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setJobAlerts(false);
+    setSettings(false);
+    setIsOpen(false);
+  };
+
+  const handleClickJobAlerts = () => {
+    setJobAlerts(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setSettings(false);
+    setIsOpen(false);
+  };
+  
+  const handleClickSettings = () => {
+    setSettings(true);
+    setOverview(false);
+    setProfile(false);
+    setAppliedJobs(false);
+    setSavedJobs(false);
+    setJobAlerts(false);
+    setIsOpen(false);
   };
 
   const handlePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -295,6 +389,11 @@ const RecruitRadarContextProvider = ({
     router.push('/login')
   }
 
+  const handleShowProfile = () => {
+    setShowProfile(true);
+    setShowProfileHome(false);
+  }
+
   return (
     <RecruitRadarContext.Provider
       value={{
@@ -331,7 +430,29 @@ const RecruitRadarContextProvider = ({
         handlePasswordReset,
         setNewPassword, 
         setConfirmPassword,
-        handleLogout
+        handleLogout,
+        showProfile,
+        showProfileHome,
+        handleShowProfile,
+        setShowProfile,
+        setShowProfileHome,
+        profile,
+        overview,
+        appliedJobs,
+        savedJobs,
+        jobAlerts,
+        settings,
+        handleClickOverview,
+        handleClickProfile,
+        handleClickAppliedJobs,
+        handleClickSavedJobs,
+        handleClickJobAlerts,
+        handleClickSettings,
+        isOpen, setIsOpen,
+        avatarUrl,
+        handleFileChange,
+        handleCameraClick,
+        fileInputRef
       }}
     >
       {children}

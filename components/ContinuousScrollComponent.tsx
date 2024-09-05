@@ -1,40 +1,48 @@
-import { employerSliderImages } from "@/data";
-import Image from "next/image";
+import { employerSliderImages } from '@/data';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Marquee from '@/components/magicui/marquee';
 
 // Import Swiper styles
 import 'swiper/css';
 
-type Props = {}
+type Props = {};
 
 const ContinuousScrollComponent = (props: Props) => {
   return (
-    <Swiper
-      spaceBetween={8}
-      slidesPerView={7}
-      centeredSlides={true}
-      loop={true}
-      autoplay={{
-        delay: 1,
-        disableOnInteraction: false,
-      }}
-      speed={300}
-      modules={[Autoplay]}
-      className="lg:flex justify-center mt-20 gap-20"
-    >
-        {employerSliderImages.map((data, index) => (
-          <SwiperSlide key={index} className="w-auto">
-            <Image
-              src={data.image}
-              alt={data.altText}
-              width={100}
-              height={100}
-            />
-          </SwiperSlide>
-        ))}
-    </Swiper>
-  )
-}
+    // <Swiper
+    //   spaceBetween={8}
+    //   slidesPerView={7}
+    //   centeredSlides={true}
+    //   loop={true}
+    //   autoplay={{
+    //     delay: 1,
+    //     disableOnInteraction: false,
+    //   }}
+    //   speed={300}
+    //   modules={[Autoplay]}
+    //   className="lg:flex justify-center mt-20 gap-20"
+    // >
+    //     {employerSliderImages.map((data, index) => (
+    //       <SwiperSlide key={index} className="w-auto">
+    //         <Image
+    //           src={data.image}
+    //           alt={data.altText}
+    //           width={100}
+    //           height={100}
+    //         />
+    //       </SwiperSlide>
+    //     ))}
+    // </Swiper>
+    <Marquee pauseOnHover className="[--duration:20s] mt-20">
+      {employerSliderImages.map((data, index) => (
+        <div key={index} className="w-auto">
+          <Image src={data.image} alt={data.altText} width={120} height={120} />
+        </div>
+      ))}
+    </Marquee>
+  );
+};
 
-export default ContinuousScrollComponent
+export default ContinuousScrollComponent;

@@ -3,6 +3,7 @@ import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
 import { NavDataInterface } from './interfaces/HomepageInterface';
+import { ProfileDataInterface } from './interfaces/ProfileInterface';
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -276,6 +277,15 @@ export const texts: Array<string> = [
   'AI powered applicant tracking system',
 ];
 
+export const sideBarTexts: Array<string> = [
+  'Overview',
+  "Job Seeker's Profile",
+  'Applied Jobs',
+  'Saved Jobs',
+  'Job Alert',
+  'Settings',
+];
+
 export const employerSliderImages: Array<EmployerDataInterface> = [
   {
     image: "/mail-chimp.png",
@@ -348,5 +358,73 @@ export const employerHeroData: Array<EmployerHeroInterface> = [
     size: 30,
     heading: "Top-notch",
     bodyText: "Access top-tier talent and<br></br> enhance your team with candidates that match your role"
+  },
+]
+
+export const profileDetailData: Array<ProfileDataInterface> = [
+  {
+    header: 'EXPERIENCE',
+    subheader: 'Your experience will show up here'
+  },
+  {
+    header: 'EDUCATION',
+    subheader: 'Your school(s) will show up here'
+  },
+  {
+    header: 'SKILLS',
+    subheader: 'Your skills will show up here'
+  },
+]
+
+export const overviewJobData: Array<any> = [
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "On-site",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Jan 8, 2024  6:28AM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Junior Graphic Designer",
+      jobLocation: "Hybrid",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Devops Engineer",
+      jobLocation: "Remote",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Hybrid",
+      jobType: "Internship",
+      daysRem: "27 days remaining"
+    },
+    appliedDate: "Feb 2, 2024  19:28PM",
+    status: "Active"
   },
 ]

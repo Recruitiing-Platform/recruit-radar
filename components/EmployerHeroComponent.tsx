@@ -6,7 +6,7 @@ type Props = {};
 const EmployerHeroComponent = (props: Props) => {
   return (
     <>
-      <div className="flex flex-col md:flex-row text-center lg:text-left gap-10 md:gap-2 items-center justify-between lg:mt-32 mt-20 px-5 md:px-10 lg:px-20 xl:px-36 font-sans 3xl:pr-80 3xl:pl-96">
+      <div className="flex flex-col md:flex-row text-center lg:text-left gap-10 md:gap-2 items-center justify-between mt-20 px-5 md:px-10 lg:px-20 xl:px-36 font-sans 3xl:pr-80 3xl:pl-96">
         <div className="bg-recLightGrey lg:py-8 px-8 md:px-2 lg:px-8 py-10 md:py-2 md:h-fit rounded-2xl md:w-[30%] items-center text-center shadow-employer">
           <Image
             className="mx-auto mb-2"
