@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
-type Props = {};
-
-const EmployerHeroComponent = (props: Props) => {
+const EmployerHeroComponent = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row text-center lg:text-left gap-10 md:gap-2 items-center justify-between mt-20 px-5 md:px-10 lg:px-20 xl:px-36 font-sans 3xl:pr-80 3xl:pl-96">
