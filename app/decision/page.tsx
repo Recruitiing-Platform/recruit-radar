@@ -3,16 +3,13 @@
 import { toast } from '@/components/ui/use-toast';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import LeftSideSignUpComponent from '@/components/SignUpComponents/LeftSideSignUpComponent';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { MdContentPasteSearch } from 'react-icons/md';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
-type Props = {};
-
-const DecisionPage = (props: Props) => {
+const DecisionPage = () => {
   const router = useRouter();
   const { rRUser } = useRecruitRadarHook();
   const [mainDecision, setMainDecision] = useState<boolean>(true);
@@ -53,27 +50,27 @@ const DecisionPage = (props: Props) => {
   };
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-fit pb-10 md:pb-0 md:h-screen">
       <LeftSideSignUpComponent />
-      <div className="bg-[#FFFFFF] h-full w-1/2 flex flex-col items-center justify-center">
+      <div className="bg-[#FFFFFF] h-full w-full lg:w-1/2 flex flex-col items-center justify-center">
         {mainDecision && (
-          <p className="text-headerThree font-recSemiBold pb-16 text-[#000]">
+          <p className="text-headerSix text-center pt-5 md:pt-0 md:text-headerThree font-recSemiBold pb-5 md:pb-16 text-[#000] md:px-7">
             Please select your user type
           </p>
         )}
         {employerDecision && (
-          <p className="text-headerThree font-recSemiBold pb-16">
+          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16">
             Employer
           </p>
         )}
         {jobSeekerDecision && (
-          <p className="text-headerThree font-recSemiBold pb-16">
+          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16">
             Job Seeker
           </p>
         )}
 
         {mainDecision && (
-          <div className="flex items-center gap-16">
+          <div className="flex flex-col justify-center md:flex-row items-center gap-5 md:gap-16">
             <div
               className="flex flex-col items-center justify-center gap-5 px-10 py-6 rounded-2xl border border-recBody hover:border-recPrimary transition-all cursor-pointer transform duration-300"
               onClick={handleEmployerClick}
@@ -100,26 +97,32 @@ const DecisionPage = (props: Props) => {
         )}
         {employerDecision && (
           <>
-          <div className="flex items-center gap-16 pb-5">
+          <div className="flex flex-col mx-auto md:flex-row items-center justify-center gap-5 md:gap-16 lg:gap-10 xl:gap-16 pt-5 md:pt-0 pb-5">
             <div
-              className="flex flex-col items-center justify-center gap-5 px-7 py-6 rounded-2xl border border-recBody hover:border-recPrimary transition-all cursor-pointer transform duration-300"
+              className="flex flex-col w-[215px] md:w-fit items-center justify-center gap-5 px-7 py-6 rounded-2xl border border-recBody hover:border-recPrimary transition-all cursor-pointer transform duration-300"
               onClick={() => router.push('/employer')}
             >
-              <div className="text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+              <div className="hidden md:flex text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
                 <MdOutlineSupervisorAccount size={54} />
               </div>
-              <span className="text-headerFive font-recMedium text-[#555562]">
+              <div className="flex md:hidden text-recLight p-4 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+                <MdOutlineSupervisorAccount size={35} />
+              </div>
+              <span className="text-headerSix md:text-headerFive lg:text-headerSix xl:text-headerFive font-recMedium text-[#555562]">
                 Go to Homepage
               </span>
             </div>
             <div
-              className="flex flex-col items-center justify-center gap-5 px-8 py-6 rounded-2xl border border-recBody hover:text-recPrimary transition-all cursor-pointer transform duration-300"
+              className="flex flex-col w-[215px] md:w-fit items-center justify-center gap-5 px-8 py-6 rounded-2xl border border-recBody hover:text-recPrimary transition-all cursor-pointer transform duration-300"
               onClick={() => router.push('/employer/profile')}
             >
-              <div className="text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+              <div className="hidden md:flex text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
                 <MdContentPasteSearch size={54} />
               </div>
-              <span className="text-headerFive font-recMedium text-[#555562]">
+              <div className="flex md:hidden text-recLight p-4 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+                <MdContentPasteSearch size={35} />
+              </div>
+              <span className="text-headerSix md:text-headerFive lg:text-headerSix xl:text-headerFive font-recMedium text-[#555562]">
                 Set up profile
               </span>
             </div>
@@ -129,26 +132,32 @@ const DecisionPage = (props: Props) => {
         )}
         {jobSeekerDecision && (
           <>
-          <div className="flex items-center gap-16 pb-5">
+          <div className="flex flex-col mx-auto md:flex-row items-center justify-center gap-5 md:gap-16 lg:gap-10 xl:gap-16 pt-5 md:pt-0 pb-5">
             <div
-              className="flex flex-col items-center justify-center gap-5 px-7 py-6 rounded-2xl border border-recBody hover:border-recPrimary transition-all cursor-pointer transform duration-300"
+              className="flex flex-col w-[215px] md:w-fit items-center justify-center gap-5 px-7 py-6 rounded-2xl border border-recBody hover:border-recPrimary transition-all cursor-pointer transform duration-300"
               onClick={() => router.push('/seeker')}
             >
-              <div className="text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+              <div className="hidden md:flex text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
                 <MdOutlineSupervisorAccount size={54} />
               </div>
-              <span className="text-headerFive font-recMedium text-[#555562]">
+              <div className="flex md:hidden text-recLight p-4 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+                <MdOutlineSupervisorAccount size={35} />
+              </div>
+              <span className="text-headerSix md:text-headerFive lg:text-headerSix xl:text-headerFive font-recMedium text-[#555562]">
                 Go to Homepage
               </span>
             </div>
             <div
-              className="flex flex-col items-center justify-center gap-5 px-8 py-6 rounded-2xl border border-recBody hover:text-recPrimary transition-all cursor-pointer transform duration-300"
+              className="flex flex-col w-[215px] md:w-fit items-center justify-center gap-5 px-8 py-6 rounded-2xl border border-recBody hover:text-recPrimary transition-all cursor-pointer transform duration-300"
               onClick={() => router.push('/seeker/profile')}
             >
-              <div className="text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+              <div className="hidden md:flex text-recLight p-7 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
                 <MdContentPasteSearch size={54} />
               </div>
-              <span className="text-headerFive font-recMedium text-[#555562]">
+              <div className="flex md:hidden text-recLight p-4 bg-[#AAB0BB] hover:bg-recLight hover:border hover:border-recPrimary w-fit rounded-full hover:text-recPrimary">
+                <MdContentPasteSearch size={35} />
+              </div>
+              <span className="text-headerSix md:text-headerFive lg:text-headerSix xl:text-headerFive font-recMedium text-[#555562]">
                 Set up profile
               </span>
             </div>
