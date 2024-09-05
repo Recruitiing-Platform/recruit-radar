@@ -5,9 +5,7 @@ import { ModeToggle } from "./ModeToggle";
 import { Menu } from "lucide-react";
 import EmployerMobileNavComponent from "./EmployerMobileNavComponent";
 
-type Props = {};
-
-const EmployerNavComponent = (props: Props) => {
+const JobSeekerNavComponent = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -60,4 +58,4 @@ const EmployerNavComponent = (props: Props) => {
   );
 };
 
-export default EmployerNavComponent;
+export default JobSeekerNavComponent;
