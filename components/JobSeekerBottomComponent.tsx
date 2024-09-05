@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-const EmployerBottomComponent = () => {
+
+const JobSeekerBottomComponent = () => {
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-row lg:mt-10 mt-4 items-center justify-between w-full px-5 md:px-10 lg:px-20 xl:px-32 3xl:px-80">
@@ -35,4 +36,4 @@ const EmployerBottomComponent = () => {
   );
 };
 
-export default EmployerBottomComponent;
+export default JobSeekerBottomComponent;
