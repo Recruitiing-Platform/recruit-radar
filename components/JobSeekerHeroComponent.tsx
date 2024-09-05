@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-
-type Props = {};
-
-const EmployerHeroComponent = (props: Props) => {
+const EmployerHeroComponent = () => {
   return (
     <>
       <div className="flex flex-col w-full lg:flex-row text-center md:text-left mt-14 md:mt-24 lg:mt-14 xl:mt-24 justify-between items-center gap-10 md:px-10 lg:pl-20 lg:pr-10 xl:pl-32 xl:pr-14 px-4 3xl:pr-80 3xl:pl-96">
