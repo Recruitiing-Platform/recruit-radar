@@ -3,7 +3,7 @@ import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
 import { NavDataInterface } from './interfaces/HomepageInterface';
-import { ProfileDataInterface } from './interfaces/ProfileInterface';
+import { JobAlerts, ProfileDataInterface } from './interfaces/ProfileInterface';
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -426,5 +426,44 @@ export const overviewJobData: Array<any> = [
     },
     appliedDate: "Feb 2, 2024  19:28PM",
     status: "Active"
+  },
+]
+
+export const jobAlertData: Array<JobAlerts> = [
+  {
+    logo: "/prod.svg",
+    job: "Product Designer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
+  },
+  {
+    logo: "/growth.svg",
+    job: "Growth Product Designer",
+    company: "Inventus",
+    amount: 1200,
+    years: 5,
+    about: "Inventus is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "25mins ago",
+  },
+  {
+    logo: "/frontend.svg",
+    job: "Growth Product Designer",
+    company: "Bananas enterprise",
+    amount: 2900,
+    years: 3,
+    about: "We are currently in need of a frontend software developer who is comfortable working remotely as we are.....",
+    dayPosted: "2 hours ago",
+  },
+  {
+    logo: "/mobile.svg",
+    job: "Mobile Developer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
   },
 ]

@@ -201,7 +201,7 @@ const MobileNavBarComponent = (props: Props) => {
       </div>
       <div className='block md:hidden'>
         {overview && <OverviewComponent />}
-        {/* {profile && <NavSideBarComponent />} */}
+        {profile && <NavSideBarComponent />}
         {appliedJobs && <AppliedJobComponent />}
         {savedJobs && <SavedJobComponent />}
         {jobAlerts && <JobAlertComponent />}

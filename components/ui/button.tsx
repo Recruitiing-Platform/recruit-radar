@@ -14,6 +14,8 @@ const buttonVariants = cva(
           "bg-recError text-recAccent hover:bg-recError/90",
         outline:
           "border border-[#FF595A] text-recPrimary bg-background",
+        alertOutline:
+          "border border-[#FF595A] text-recPrimary bg-background dark:bg-[#000030]",
         outlineSecondary:
           "border border-[#001233] text-[#001233] bg-background",
         outlineSecond:
