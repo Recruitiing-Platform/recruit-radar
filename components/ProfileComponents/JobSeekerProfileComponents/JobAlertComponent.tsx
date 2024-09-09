@@ -48,8 +48,8 @@ const JobAlertComponent = (props: Props) => {
                 <span className='text-[12px]'>{alert?.dayPosted}</span>
               </div>
               <div className='flex flex-wrap items-center gap-5 justify-center'>
-                <Button variant='alertOutline' className='w-52'>Decline</Button>
-                <Button className='w-52'>Apply</Button>
+                <Button variant='alertOutline' className='w-52 md:w-40'>Decline</Button>
+                <Button className='w-52 md:w-40'>Apply</Button>
               </div>
             </div>
           )

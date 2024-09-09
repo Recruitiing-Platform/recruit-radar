@@ -50,6 +50,12 @@ const RecruitRadarContextProvider = ({
   const [showProfile, setShowProfile] = useState<boolean>(false);
   const [showProfileHome, setShowProfileHome] = useState<boolean>(true);
   const [overview, setOverview] = useState<boolean>(false);
+  const [employerProfile, setEmployerProfile] = useState<boolean>(true);
+  const [employerOverview, setEmployerOverview] = useState<boolean>(false);
+  const [jobPosts, setJobPosts] = useState<boolean>(false);
+  const [employerJobs, setEmployerJob] = useState<boolean>(false);
+  const [employerNotification, setEmployerNotification] = useState<boolean>(false);
+  const [employerSettings, setEmployerSettings] = useState<boolean>(false);
   const [profile, setProfile] = useState<boolean>(true);
   const [appliedJobs, setAppliedJobs] = useState<boolean>(false);
   const [savedJobs, setSavedJobs] = useState<boolean>(false);
@@ -225,6 +231,60 @@ const RecruitRadarContextProvider = ({
     setJobAlerts(false);
     setIsOpen(false);
   };
+
+  const handleEmployerProfileClick = () => {
+    setEmployerProfile(true);
+    setEmployerOverview(false);
+    setJobPosts(false);
+    setEmployerJob(false);
+    setEmployerNotification(false)
+    setEmployerSettings(false);
+  }
+
+  const handleEmployerOverviewClick = () => {
+    setEmployerProfile(false);
+    setEmployerOverview(true);
+    setJobPosts(false);
+    setEmployerJob(false);
+    setEmployerNotification(false)
+    setEmployerSettings(false);
+  }
+
+  const handleEmployerPostClick = () => {
+    setEmployerProfile(false);
+    setEmployerOverview(false);
+    setJobPosts(true);
+    setEmployerJob(false);
+    setEmployerNotification(false)
+    setEmployerSettings(false);
+  }
+
+  const handleEmployerJobClick = () => {
+    setEmployerProfile(false);
+    setEmployerOverview(false);
+    setJobPosts(false);
+    setEmployerJob(true);
+    setEmployerNotification(false)
+    setEmployerSettings(false);
+  }
+
+  const handleEmployerNotificationClick = () => {
+    setEmployerProfile(false);
+    setEmployerOverview(false);
+    setJobPosts(false);
+    setEmployerJob(false);
+    setEmployerNotification(true)
+    setEmployerSettings(false);
+  }
+
+  const handleEmployerSettings = () => {
+    setEmployerProfile(false);
+    setEmployerOverview(false);
+    setJobPosts(false);
+    setEmployerJob(false);
+    setEmployerNotification(false)
+    setEmployerSettings(true);
+  }
 
   const handlePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -442,12 +502,24 @@ const RecruitRadarContextProvider = ({
         savedJobs,
         jobAlerts,
         settings,
+        employerProfile,
+        employerOverview,
+        jobPosts,
+        employerJobs,
+        employerSettings,
+        employerNotification,
         handleClickOverview,
         handleClickProfile,
         handleClickAppliedJobs,
         handleClickSavedJobs,
         handleClickJobAlerts,
         handleClickSettings,
+        handleEmployerProfileClick,
+        handleEmployerOverviewClick,
+        handleEmployerNotificationClick,
+        handleEmployerPostClick,
+        handleEmployerJobClick,
+        handleEmployerSettings,
         isOpen, setIsOpen,
         avatarUrl,
         handleFileChange,
