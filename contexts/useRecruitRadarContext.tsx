@@ -239,6 +239,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(false);
     setEmployerNotification(false)
     setEmployerSettings(false);
+    setIsOpen(false);
   }
 
   const handleEmployerOverviewClick = () => {
@@ -248,6 +249,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(false);
     setEmployerNotification(false)
     setEmployerSettings(false);
+    setIsOpen(false);
   }
 
   const handleEmployerPostClick = () => {
@@ -257,6 +259,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(false);
     setEmployerNotification(false)
     setEmployerSettings(false);
+    setIsOpen(false);
   }
 
   const handleEmployerJobClick = () => {
@@ -266,6 +269,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(true);
     setEmployerNotification(false)
     setEmployerSettings(false);
+    setIsOpen(false);
   }
 
   const handleEmployerNotificationClick = () => {
@@ -275,6 +279,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(false);
     setEmployerNotification(true)
     setEmployerSettings(false);
+    setIsOpen(false);
   }
 
   const handleEmployerSettings = () => {
@@ -284,6 +289,7 @@ const RecruitRadarContextProvider = ({
     setEmployerJob(false);
     setEmployerNotification(false)
     setEmployerSettings(true);
+    setIsOpen(false);
   }
 
   const handlePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
