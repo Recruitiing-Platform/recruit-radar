@@ -562,3 +562,76 @@ export const savedJobsData: Array<any> = [
     status: "Expired",
   },
 ]
+
+export const barItems: Array<any> = [
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 2,
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'D',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'E',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 50
+    },
+]

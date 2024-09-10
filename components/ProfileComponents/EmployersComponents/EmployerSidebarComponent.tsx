@@ -18,6 +18,7 @@ import EmployerProfileComponent from './EmployerProfileComponent';
 import EmployerJobPostComponent from './EmployerJobPostComponent';
 import EmployerJobComponent from './EmployerJobComponent';
 import EmployerNotificationComponent from './EmployerNotificationComponent';
+import EmployerNavSideBarComponent from './EmployerNavSidebarComponent';
 
 const EmployerSideBarComponent = () => {
   const {
@@ -36,7 +37,7 @@ const EmployerSideBarComponent = () => {
   } = useRecruitRadarHook();
 
   return (
-    <div className="z-50">
+    <div className="z-50 hidden md:block">
       <ResizablePanelGroup
         direction="horizontal"
         className="pt-1 pl-10 dark:bg-[#000611] bg-recLight hidden md:flex"
@@ -220,7 +221,7 @@ const EmployerSideBarComponent = () => {
         </ResizablePanel>
       </ResizablePanelGroup>
 
-      <NavSideBarComponent />
+      <EmployerNavSideBarComponent />
     </div>
   );
 };
