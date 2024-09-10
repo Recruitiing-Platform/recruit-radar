@@ -16,10 +16,10 @@ type Props = {};
 
 const SavedJobComponent = (props: Props) => {
   return (
-    <div className="p-10">
+    <div className="px-5 py-10 md:p-10">
       <div className="flex items-end justify-between pb-10">
-        <h1 className="text-headerThree font-recBold">
-          Saved Jobs <sup className="text-headerSix font-recSemiBold">(20)</sup>
+        <h1 className="text-headerSix md:text-headerThree font-recBold">
+          Saved Jobs <sup className="md:text-headerSix font-recSemiBold">(20)</sup>
         </h1>
         <p className="hover:underline hover:font-recMedium cursor-pointer flex items-center gap-1 hover:gap-2">
           View All{' '}
@@ -41,7 +41,7 @@ const SavedJobComponent = (props: Props) => {
             <TableRow key={index}>
               <TableCell className="py-10">
                 <div className="flex gap-3 items-center pb-2">
-                  <span className="text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
+                  <span className="md:text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
                     {jobData.job.jobTitle}
                   </span>
                   <span className="text-[#556177] font-recMedium px-2.5 py-1 rounded-lg bg-[#F5F4FB] text-textSmall border border-[#AAB0BB]">

@@ -128,7 +128,7 @@ const OverviewComponent = (props: Props) => {
               <TableRow key={jobData.job.jobTitle}>
                 <TableCell className="py-10">
                   <div className="flex gap-3 items-center pb-2">
-                    <span className="text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
+                    <span className="md:text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
                       {jobData.job.jobTitle}
                     </span>
                     <span className="text-[#556177] font-recMedium px-2.5 py-1 rounded-lg bg-[#F5F4FB] text-textSmall border border-[#AAB0BB]">
