@@ -5,9 +5,9 @@ type Props = {};
 const EmployerNavSideBarComponent = (props: Props) => {
 
   return (
-    <>
+    <div className='flex md:hidden'>
       Hello World
-    </>
+    </div>
   );
 };
 
