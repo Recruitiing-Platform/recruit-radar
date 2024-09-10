@@ -37,7 +37,7 @@ const SideBarComponent = () => {
   } = useRecruitRadarHook();
 
   return (
-    <div className="z-50">
+    <div className="z-50 hidden md:block">
       <ResizablePanelGroup
         direction="horizontal"
         className="pt-1 pl-10 dark:bg-[#000611] bg-recLight hidden md:flex"
