@@ -9,7 +9,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
-import { sideBarTexts } from '@/data';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { ChevronDown, Menu, Search, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
@@ -20,6 +19,13 @@ import JobAlertComponent from './JobAlertComponent';
 import SettingsComponent from './SettingsComponent';
 import ProfileHomeComponent from './ProfileHomeComponent';
 import NavSideBarComponent from './NavSideBarComponent';
+import { usePathname } from 'next/navigation';
+import EmployerOverviewComponent from '../EmployersComponents/EmployerOverviewComponent';
+import EmployerNavSideBarComponent from '../EmployersComponents/EmployerNavSidebarComponent';
+import EmployerJobPostComponent from '../EmployersComponents/EmployerJobPostComponent';
+import EmployerJobComponent from '../EmployersComponents/EmployerJobComponent';
+import EmployerNotificationComponent from '../EmployersComponents/EmployerNotificationComponent';
+import EmployerSettingsComponent from '../EmployersComponents/EmployerSettingsComponent';
 
 type Props = {};
 
@@ -41,9 +47,23 @@ const MobileNavBarComponent = (props: Props) => {
     handleClickProfile,
     handleClickSavedJobs,
     handleClickSettings,
+    employerProfile,
+    employerOverview,
+    jobPosts,
+    employerJobs,
+    employerSettings,
+    employerNotification,
+    handleEmployerProfileClick,
+    handleEmployerOverviewClick,
+    handleEmployerNotificationClick,
+    handleEmployerPostClick,
+    handleEmployerJobClick,
+    handleEmployerSettings,
     isOpen,
     setIsOpen,
   } = useRecruitRadarHook();
+
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleNavBarScroll = () =>
@@ -133,80 +153,165 @@ const MobileNavBarComponent = (props: Props) => {
             <div className="pl-5">
               <NavLogoComponent />
             </div>
-            <p className="text-textSmall pt-10 pl-5">JOB SEEKER’S DASHBOARD</p>
-            <ul className="flex flex-col items-center gap-8 py-10">
-              <li
-                className={
-                  overview
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickOverview}
-              >
-                Overview
-              </li>
-              <li
-                className={
-                  profile
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickProfile}
-              >
-                Job Seeker&apos;s Profile
-              </li>
-              <li
-                className={
-                  appliedJobs
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickAppliedJobs}
-              >
-                Applied Jobs
-              </li>
-              <li
-                className={
-                  savedJobs
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickSavedJobs}
-              >
-                Saved Jobs
-              </li>
-              <li
-                className={
-                  jobAlerts
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickJobAlerts}
-              >
-                Job Alert
-              </li>
-              <li
-                className={
-                  settings
-                    ? `text-[16px] font-recSemiBold dark:text-recAccent`
-                    : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
-                }
-                onClick={handleClickSettings}
-              >
-                Settings
-              </li>
-            </ul>
+            {pathname === '/employer/profile' ? (
+              <>
+                <p className="text-textSmall pt-10 pl-5">
+                  EMPLOYER&apos;S DASHBOARD
+                </p>
+                <ul className="flex flex-col items-center gap-8 py-10">
+                  <li
+                    className={
+                      employerOverview
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerOverviewClick}
+                  >
+                    Overview
+                  </li>
+                  <li
+                    className={
+                      employerProfile
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerProfileClick}
+                  >
+                    Employer&apos;s Profile
+                  </li>
+                  <li
+                    className={
+                      jobPosts
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerPostClick}
+                  >
+                    Post A Job
+                  </li>
+                  <li
+                    className={
+                      employerJobs
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerJobClick}
+                  >
+                    My Jobs
+                  </li>
+                  <li
+                    className={
+                      employerNotification
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerNotificationClick}
+                  >
+                    Notifications
+                  </li>
+                  <li
+                    className={
+                      employerSettings
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleEmployerSettings}
+                  >
+                    Settings
+                  </li>
+                </ul>
+              </>
+            ) : (
+              <>
+                <p className="text-textSmall pt-10 pl-5">
+                  JOB SEEKER’S DASHBOARD
+                </p>
+                <ul className="flex flex-col items-center gap-8 py-10">
+                  <li
+                    className={
+                      overview
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickOverview}
+                  >
+                    Overview
+                  </li>
+                  <li
+                    className={
+                      profile
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickProfile}
+                  >
+                    Job Seeker&apos;s Profile
+                  </li>
+                  <li
+                    className={
+                      appliedJobs
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickAppliedJobs}
+                  >
+                    Applied Jobs
+                  </li>
+                  <li
+                    className={
+                      savedJobs
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickSavedJobs}
+                  >
+                    Saved Jobs
+                  </li>
+                  <li
+                    className={
+                      jobAlerts
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickJobAlerts}
+                  >
+                    Job Alert
+                  </li>
+                  <li
+                    className={
+                      settings
+                        ? `text-[16px] font-recSemiBold dark:text-recAccent`
+                        : `text-[16px] font-recRegular text-recSubtle hover:font-recMedium hover:text-recDark dark:hover:font-recMedium dark:hover:text-recAccent transition transform duration-400`
+                    }
+                    onClick={handleClickSettings}
+                  >
+                    Settings
+                  </li>
+                </ul>
+              </>
+            )}
           </div>
         )}
       </div>
-      <div className='block md:hidden'>
-        {overview && <OverviewComponent />}
-        {profile && <NavSideBarComponent />}
-        {appliedJobs && <AppliedJobComponent />}
-        {savedJobs && <SavedJobComponent />}
-        {jobAlerts && <JobAlertComponent />}
-        {settings && <SettingsComponent />}
-      </div>
+      {pathname === '/employer/profile' ? (
+        <div className="block md:hidden">
+          {employerOverview && <EmployerOverviewComponent />}
+          {employerProfile && <EmployerNavSideBarComponent />}
+          {jobPosts && <EmployerJobPostComponent />}
+          {employerJobs && <EmployerJobComponent />}
+          {employerNotification && <EmployerNotificationComponent />}
+          {employerSettings && <EmployerSettingsComponent />}
+        </div>
+      ) : (
+        <div className="block md:hidden">
+          {overview && <OverviewComponent />}
+          {profile && <NavSideBarComponent />}
+          {appliedJobs && <AppliedJobComponent />}
+          {savedJobs && <SavedJobComponent />}
+          {jobAlerts && <JobAlertComponent />}
+          {settings && <SettingsComponent />}
+        </div>
+      )}
     </>
   );
 };
