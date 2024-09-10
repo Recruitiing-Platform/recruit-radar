@@ -59,12 +59,12 @@ const DecisionPage = () => {
           </p>
         )}
         {employerDecision && (
-          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16">
+          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16 text-[#000]">
             Employer
           </p>
         )}
         {jobSeekerDecision && (
-          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16">
+          <p className="text-headerSix md:text-headerThree text-center font-recSemiBold pt-10 md:pt-0 md:pb-16 text-[#000]">
             Job Seeker
           </p>
         )}
