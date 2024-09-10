@@ -34,7 +34,7 @@ const SettingsProfileTabComponent = () => {
   return (
     <div>
       <h3 className="text-textSmall font-recSemiBold pb-4">Your photo</h3>
-      <div className="flex items-center gap-5 pb-20">
+      <div className="flex md:items-center flex-col md:flex-row gap-5 pb-20">
         <Avatar className="w-36 h-36 border-2 border-recPrimary">
           <AvatarImage
             src={
@@ -63,7 +63,7 @@ const SettingsProfileTabComponent = () => {
         </div>
       </div>
       <div className="space-y-6">
-        <div className="flex items-center w-full gap-6">
+        <div className="flex items-center flex-col md:flex-row w-full gap-6">
           <div className="w-full">
             <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
               Username
@@ -84,7 +84,7 @@ const SettingsProfileTabComponent = () => {
             </select>
           </div>
         </div>
-        <div className="flex items-center w-full gap-6">
+        <div className="flex items-center flex-col md:flex-row w-full gap-6">
           <div className="w-full">
             <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
               Your job title

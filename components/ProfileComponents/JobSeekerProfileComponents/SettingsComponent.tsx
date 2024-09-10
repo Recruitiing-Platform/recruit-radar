@@ -14,7 +14,7 @@ const SettingsComponent = () => {
         <TabsList className="w-fit flex items-center justify-center bg-[none] pb-14">
           <TabsTrigger
             value="account"
-            className="flex gap-2 justify-center items-center data-[state=active]:border dark:data-[state=active]:border-b-recLightGrey data-[state=active]:border-b-recDark data-[state=active]:text-[#000] dark:data-[state=active]:text-recLightGrey w-fit py-3 font-recSemiBold"
+            className="text-textSmall md:text-headerSix flex gap-2 justify-center items-center data-[state=active]:border dark:data-[state=active]:border-b-recLightGrey data-[state=active]:border-b-recDark data-[state=active]:text-[#000] dark:data-[state=active]:text-recLightGrey w-fit py-3 font-recSemiBold"
           >
             <span>
               <User size={20} />
@@ -23,7 +23,7 @@ const SettingsComponent = () => {
           </TabsTrigger>
           <TabsTrigger
             value="password"
-            className="flex gap-2 justify-center items-center data-[state=active]:border dark:data-[state=active]:border-b-recLightGrey data-[state=active]:border-b-recDark data-[state=active]:text-[#000] dark:data-[state=active]:text-recLightGrey w-fit px-5 py-3 font-recSemiBold"
+            className="text-textSmall md:text-headerSix flex gap-2 justify-center items-center data-[state=active]:border dark:data-[state=active]:border-b-recLightGrey data-[state=active]:border-b-recDark data-[state=active]:text-[#000] dark:data-[state=active]:text-recLightGrey w-fit md:px-5 py-3 font-recSemiBold"
           >
             <span>
               <Lock size={20} />
