@@ -8,9 +8,7 @@ import { ArrowRight, MoveRight, SquareCheckBig } from 'lucide-react';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -107,7 +105,7 @@ const OverviewComponent = (props: Props) => {
         </Button>
       </div>
       <div className="pt-20 pb-5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pb-5">
           <p className="text-headerSix font-recSemiBold">Recently Applied</p>
           <p className="hover:underline hover:font-recMedium cursor-pointer flex items-center gap-1 hover:gap-2">
             View All{' '}
@@ -130,7 +128,7 @@ const OverviewComponent = (props: Props) => {
               <TableRow key={jobData.job.jobTitle}>
                 <TableCell className="py-10">
                   <div className="flex gap-3 items-center pb-2">
-                    <span className="text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
+                    <span className="md:text-headerSix font-recSemiBold truncate w-1/2 lg:w-[70%]">
                       {jobData.job.jobTitle}
                     </span>
                     <span className="text-[#556177] font-recMedium px-2.5 py-1 rounded-lg bg-[#F5F4FB] text-textSmall border border-[#AAB0BB]">
