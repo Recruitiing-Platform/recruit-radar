@@ -467,3 +467,98 @@ export const jobAlertData: Array<JobAlerts> = [
     dayPosted: "3mins ago",
   },
 ]
+
+export const savedJobsData: Array<any> = [
+  {
+    job: {
+      jobTitle: "Technical Support Specialist",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "5 days rem.",
+      amount: "N150,000"
+    },
+    status: "Active",
+    action: "Apply Now"
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+    action: "Deadline Expired"
+  },
+  {
+    job: {
+      jobTitle: "Software Engineer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "4 days rem.",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "2 days rem.",
+      amount: "N250,000"
+    },
+    status: "Active",
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Interaction Designer",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+]
