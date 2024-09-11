@@ -17,15 +17,14 @@ import AppliedJobComponent from './AppliedJobComponent';
 import SavedJobComponent from './SavedJobComponent';
 import JobAlertComponent from './JobAlertComponent';
 import SettingsComponent from './SettingsComponent';
-import ProfileHomeComponent from './ProfileHomeComponent';
 import NavSideBarComponent from './NavSideBarComponent';
 import { usePathname } from 'next/navigation';
 import EmployerOverviewComponent from '../EmployersComponents/EmployerOverviewComponent';
-import EmployerNavSideBarComponent from '../EmployersComponents/EmployerNavSidebarComponent';
 import EmployerJobPostComponent from '../EmployersComponents/EmployerJobPostComponent';
 import EmployerJobComponent from '../EmployersComponents/EmployerJobComponent';
 import EmployerNotificationComponent from '../EmployersComponents/EmployerNotificationComponent';
 import EmployerSettingsComponent from '../EmployersComponents/EmployerSettingsComponent';
+import EmployerProfileComponent from '../EmployersComponents/EmployerProfileComponent';
 
 type Props = {};
 
@@ -296,7 +295,7 @@ const MobileNavBarComponent = (props: Props) => {
       {pathname === '/employer/profile' ? (
         <div className="block md:hidden">
           {employerOverview && <EmployerOverviewComponent />}
-          {employerProfile && <EmployerNavSideBarComponent />}
+          {employerProfile && <EmployerProfileComponent />}
           {jobPosts && <EmployerJobPostComponent />}
           {employerJobs && <EmployerJobComponent />}
           {employerNotification && <EmployerNotificationComponent />}
