@@ -10,9 +10,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { ToastAction } from '@/components/ui/toast';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 
-type Props = {};
-
-const EmployerJobPostComponent = (props: Props) => {
+const EmployerJobPostComponent = () => {
   const { toast } = useToast()
   const {handleEmployerJobClick} = useRecruitRadarHook();
   
