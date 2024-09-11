@@ -3,7 +3,7 @@ import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
 import { NavDataInterface } from './interfaces/HomepageInterface';
-import { AppliedJobDataInterface, ProfileDataInterface } from './interfaces/ProfileInterface';
+import { AppliedJobDataInterface, JobAlerts, ProfileDataInterface } from './interfaces/ProfileInterface';
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -427,6 +427,420 @@ export const overviewJobData: Array<any> = [
     appliedDate: "Feb 2, 2024  19:28PM",
     status: "Active"
   },
+]
+
+export const jobAlertData: Array<JobAlerts> = [
+  {
+    logo: "/prod.svg",
+    job: "Product Designer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
+  },
+  {
+    logo: "/growth.svg",
+    job: "Growth Product Designer",
+    company: "Inventus",
+    amount: 1200,
+    years: 5,
+    about: "Inventus is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "25mins ago",
+  },
+  {
+    logo: "/frontend.svg",
+    job: "Growth Product Designer",
+    company: "Bananas enterprise",
+    amount: 2900,
+    years: 3,
+    about: "We are currently in need of a frontend software developer who is comfortable working remotely as we are.....",
+    dayPosted: "2 hours ago",
+  },
+  {
+    logo: "/mobile.svg",
+    job: "Mobile Developer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
+  },
+]
+
+export const savedJobsData: Array<any> = [
+  {
+    job: {
+      jobTitle: "Technical Support Specialist",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "5 days rem.",
+      amount: "N150,000"
+    },
+    status: "Active",
+    action: "Apply Now"
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+    action: "Deadline Expired"
+  },
+  {
+    job: {
+      jobTitle: "Software Engineer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "4 days rem.",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "2 days rem.",
+      amount: "N250,000"
+    },
+    status: "Active",
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Interaction Designer",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+]
+
+export const barItems: Array<any> = [
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 2,
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'D',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'E',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 50
+    },
+]
+
+export const jobAlertData: Array<JobAlerts> = [
+  {
+    logo: "/prod.svg",
+    job: "Product Designer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
+  },
+  {
+    logo: "/growth.svg",
+    job: "Growth Product Designer",
+    company: "Inventus",
+    amount: 1200,
+    years: 5,
+    about: "Inventus is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "25mins ago",
+  },
+  {
+    logo: "/frontend.svg",
+    job: "Growth Product Designer",
+    company: "Bananas enterprise",
+    amount: 2900,
+    years: 3,
+    about: "We are currently in need of a frontend software developer who is comfortable working remotely as we are.....",
+    dayPosted: "2 hours ago",
+  },
+  {
+    logo: "/mobile.svg",
+    job: "Mobile Developer",
+    company: "Monogo bank",
+    amount: 700,
+    years: 3,
+    about: "Monogo bank is a leading financial institution that is well know in bridging the gap between...",
+    dayPosted: "3mins ago",
+  },
+]
+
+export const savedJobsData: Array<any> = [
+  {
+    job: {
+      jobTitle: "Technical Support Specialist",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "5 days rem.",
+      amount: "N150,000"
+    },
+    status: "Active",
+    action: "Apply Now"
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+    action: "Deadline Expired"
+  },
+  {
+    job: {
+      jobTitle: "Software Engineer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "4 days rem.",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "2 days rem.",
+      amount: "N250,000"
+    },
+    status: "Active",
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N150,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Interaction Designer",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "",
+      amount: "N450,000"
+    },
+    status: "Expired",
+  },
+]
+
+export const barItems: Array<any> = [
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 2,
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 2
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'D',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'E',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'A',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 25
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'B',
+      progress: 50
+    },
+    {
+      className: 'rounded-md bg-recPrimary',
+      label: 'C',
+      progress: 50
+    },
 ]
 
 export const appliedJobData: Array<AppliedJobDataInterface> = [

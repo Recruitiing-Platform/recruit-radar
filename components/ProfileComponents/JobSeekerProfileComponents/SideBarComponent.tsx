@@ -20,7 +20,6 @@ import ProfileHomeComponent from './ProfileHomeComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import NavSideBarComponent from './NavSideBarComponent';
 
-
 const SideBarComponent = () => {
   const {
     overview,
@@ -37,9 +36,8 @@ const SideBarComponent = () => {
     handleClickSettings,
   } = useRecruitRadarHook();
 
-
   return (
-    <div className="z-50">
+    <div className="z-50 hidden md:block">
       <ResizablePanelGroup
         direction="horizontal"
         className="pt-1 pl-10 dark:bg-[#000611] bg-recLight hidden md:flex"
@@ -90,7 +88,9 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  appliedJobs ? 'bg-recLightGrey font-recSemiBold dark:bg-recSecondary pl-2' : ''
+                  appliedJobs
+                    ? 'bg-recLightGrey font-recSemiBold dark:bg-recSecondary pl-2'
+                    : ''
                 }`}
                 onClick={handleClickAppliedJobs}
               >
@@ -107,7 +107,9 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  savedJobs ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold' : ''
+                  savedJobs
+                    ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold'
+                    : ''
                 }`}
                 onClick={handleClickSavedJobs}
               >
@@ -124,7 +126,9 @@ const SideBarComponent = () => {
               </div>
               <div
                 className={`flex gap-3 items-center py-2 cursor-pointer transition-all transform duration-300 hover:bg-recLightGrey dark:hover:bg-recSecondary hover:pl-2 ${
-                  jobAlerts ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold' : ''
+                  jobAlerts
+                    ? 'bg-recLightGrey dark:bg-recSecondary pl-2 font-recSemiBold'
+                    : ''
                 }`}
                 onClick={handleClickJobAlerts}
               >

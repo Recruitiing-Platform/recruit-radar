@@ -14,6 +14,8 @@ const buttonVariants = cva(
           "bg-recError text-recAccent hover:bg-recError/90",
         outline:
           "border border-[#FF595A] text-recPrimary bg-background",
+        alertOutline:
+          "border border-[#FF595A] text-recPrimary bg-background dark:bg-[#000030]",
         outlineSecondary:
           "border border-[#001233] text-[#001233] bg-background",
         outlineSecond:
@@ -24,7 +26,8 @@ const buttonVariants = cva(
           "bg-recSecondary text-recAccent hover:bg-recSecondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        disabled: "bg-[#FFACAC] text-recAccent"
+        disabled: "bg-[#FFACAC] text-recAccent",
+        disabledJob: "bg-[#F5F4FB] dark:text-[#555562]"
       },
       size: {
         default: "h-12 px-4 py-2",

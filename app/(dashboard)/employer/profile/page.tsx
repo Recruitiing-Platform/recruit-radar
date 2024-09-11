@@ -1,11 +1,14 @@
-import React from 'react'
+'use client';
 
-type Props = {}
+import EmployerSideBarComponent from '@/components/ProfileComponents/EmployersComponents/EmployerSidebarComponent';
+import React from 'react';
 
-const EmployerProfilePage = (props: Props) => {
+const EmployerProfileHomepage = () => {
   return (
-    <div>EmployerProfilePage</div>
-  )
-}
+    <div>
+      <EmployerSideBarComponent />
+    </div>
+  );
+};
 
-export default EmployerProfilePage
+export default EmployerProfileHomepage;
