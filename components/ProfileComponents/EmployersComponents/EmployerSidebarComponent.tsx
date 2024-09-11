@@ -12,13 +12,11 @@ import { IoBookmarksSharp, IoLogOutOutline } from 'react-icons/io5';
 import { IoMdNotifications, IoMdSettings } from 'react-icons/io';
 import LogoutAlertDialogComponent from '@/components/LogoutAlertDialogComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
-import NavSideBarComponent from '../JobSeekerProfileComponents/NavSideBarComponent';
 import EmployerOverviewComponent from './EmployerOverviewComponent';
 import EmployerProfileComponent from './EmployerProfileComponent';
 import EmployerJobPostComponent from './EmployerJobPostComponent';
 import EmployerJobComponent from './EmployerJobComponent';
 import EmployerNotificationComponent from './EmployerNotificationComponent';
-import EmployerNavSideBarComponent from './EmployerNavSidebarComponent';
 
 const EmployerSideBarComponent = () => {
   const {
@@ -220,8 +218,6 @@ const EmployerSideBarComponent = () => {
           {employerSettings && <EmployerProfileComponent />}
         </ResizablePanel>
       </ResizablePanelGroup>
-
-      <EmployerNavSideBarComponent />
     </div>
   );
 };
