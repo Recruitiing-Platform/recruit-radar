@@ -3,7 +3,7 @@ import { ChooseDataInterface } from './interfaces/HomepageInterface';
 import { JobDataInterface } from './interfaces/HomepageInterface';
 import { LinkDataInterface } from './interfaces/HomepageInterface';
 import { NavDataInterface } from './interfaces/HomepageInterface';
-import { ProfileDataInterface } from './interfaces/ProfileInterface';
+import { AppliedJobDataInterface, ProfileDataInterface } from './interfaces/ProfileInterface';
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -428,3 +428,51 @@ export const overviewJobData: Array<any> = [
     status: "Active"
   },
 ]
+
+export const appliedJobData: Array<AppliedJobDataInterface> = [
+  {
+    jobTitle: "Software Engineer",
+    employerName: "Tech Corp",
+    applicationDate: "2024-08-30",
+    salary: "$120,000",
+    status: "Pending",
+    datePosted: "2024-08-20",
+    location: "San Francisco, CA",
+  },
+  {
+    jobTitle: "Product Manager",
+    employerName: "InnovateX",
+    applicationDate: "2024-09-01",
+    salary: "$105,000",
+    status: "Interview Scheduled",
+    datePosted: "2024-08-22",
+    location: "New York, NY",
+  },
+  {
+    jobTitle: "UI/UX Designer",
+    employerName: "Designify",
+    applicationDate: "2024-09-03",
+    salary: "$85,000",
+    status: "Rejected",
+    datePosted: "2024-08-25",
+    location: "Remote",
+  },
+  {
+    jobTitle: "Data Analyst",
+    employerName: "DataTech",
+    applicationDate: "2024-08-25",
+    salary: "$95,000",
+    status: "Accepted",
+    datePosted: "2024-08-15",
+    location: "Chicago, IL",
+  },
+  {
+    jobTitle: "Marketing Specialist",
+    employerName: "AdSphere",
+    applicationDate: "2024-08-28",
+    salary: "$75,000",
+    status: "Pending",
+    datePosted: "2024-08-18",
+    location: "Austin, TX",
+  },
+];
