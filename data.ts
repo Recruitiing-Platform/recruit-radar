@@ -635,3 +635,5 @@ export const barItems: Array<any> = [
       progress: 50
     },
 ]
+
+export const benefitsWords: Array<string> = ['401k Salary', 'Distributed Team', 'Async', 'Vision Insurance', 'Dental Insurance', 'Medical Insurance', 'Unlimited Vacation', '4 day workweek', '401k matching', 'Company Retreats', 'Free gym membership', 'Equity Compensation', 'No whiteboard interview', 'We hire old and young']
