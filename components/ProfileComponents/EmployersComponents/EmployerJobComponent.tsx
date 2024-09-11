@@ -4,7 +4,9 @@ type Props = {}
 
 const EmployerJobComponent = (props: Props) => {
   return (
-    <div>EmployerJobComponent</div>
+    <div>
+      EmployerJobComponent
+    </div>
   )
 }
 
