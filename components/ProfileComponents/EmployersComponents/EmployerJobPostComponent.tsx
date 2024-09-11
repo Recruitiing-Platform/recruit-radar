@@ -6,10 +6,16 @@ import BenefitsComponent from './BenefitsComponent';
 import { benefitsWords } from '@/data';
 import { Button } from '@/components/ui/button';
 import { MoveRight } from 'lucide-react';
+import { useToast } from '@/components/ui/use-toast';
+import { ToastAction } from '@/components/ui/toast';
+import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 
 type Props = {};
 
 const EmployerJobPostComponent = (props: Props) => {
+  const { toast } = useToast()
+  const {handleEmployerJobClick} = useRecruitRadarHook();
+  
   return (
     <div className="px-5 py-10 md:px-10 md:py-10 lg:pr-20">
       <h1 className="text-headerThree font-recSemiBold pb-8">Post a Job</h1>
@@ -65,12 +71,26 @@ const EmployerJobPostComponent = (props: Props) => {
 
       <p className="text-headerFive font-recSemiBold pb-5">Job Description</p>
       <textarea
-         rows={10}
-          className="w-full p-2 bg-recLightGrey mb-8 dark:bg-[#000611] border rounded placeholder:text-textSmall"
-          placeholder="Add job description here"
-        />
+        rows={10}
+        className="w-full p-2 bg-recLightGrey mb-8 dark:bg-[#000611] border rounded placeholder:text-textSmall"
+        placeholder="Add job description here"
+      />
 
-        <Button className='flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:scale-105'>Post Job <span><MoveRight /></span></Button>
+      <Button
+        onClick={() => {
+          toast({
+            title: 'Congratulations, Your Job is successfully posted!',
+            description: 'You can manage your posted jobs in the My Job section of your dashboard.',
+            action: <ToastAction onClick={handleEmployerJobClick} altText="View Jobs" className='flex items-center gap-2'>View Jobs <span><MoveRight /></span></ToastAction>,
+          });
+        }}
+        className="flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:scale-105"
+      >
+        Post Job{' '}
+        <span>
+          <MoveRight />
+        </span>
+      </Button>
     </div>
   );
 };
