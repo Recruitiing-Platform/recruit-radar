@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import MainProfileComponent from './MainProfileComponent';
 import MainCertComponent from './MainCertComponent';
+import MainExperienceComponent from './MainExperienceComponents';
+import MainEducationComponent from './MainEducationComponents';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import NavJobSeekerProfileComponent from './NavJobSeekerProfileComponent';
 
@@ -63,8 +65,8 @@ const NavSideBarComponent = (props: Props) => {
             <TabsContent value="cert">
               <MainCertComponent />
             </TabsContent>
-            <TabsContent value="experience">Experience</TabsContent>
-            <TabsContent value="education">Education</TabsContent>
+            <TabsContent value="experience"><MainExperienceComponent /></TabsContent>
+            <TabsContent value="education"><MainEducationComponent /></TabsContent>
           </Tabs>
         </div>
       )}

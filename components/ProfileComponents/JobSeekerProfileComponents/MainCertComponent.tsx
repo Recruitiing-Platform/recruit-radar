@@ -19,7 +19,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
           {/* Right Column: Input Fields */}
           <div className="md:w-2/3">
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Organization</label>
+              <label className="block text-recBody mb-2"><strong>Organization</strong></label>
               <input
                 type="text"
                 className="w-full p-2 border rounded"
@@ -28,7 +28,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Location</label>
+              <label className="block text-recBody mb-2"><strong>Location</strong></label>
               <div className="relative">
                 <select
                   className="w-full p-2 border rounded appearance-none pr-8"
@@ -62,7 +62,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
-                Name of Certificate
+                <strong>Name of Certificate</strong>
               </label>
               <input
                 type="text"
@@ -73,7 +73,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
-                Certifying Organization
+                <strong>Certifying Organization</strong>
               </label>
               <input
                 type="text"
@@ -83,13 +83,13 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Date Obtained</label>
+              <label className="block text-recBody mb-2"><strong>Date Obtained</strong></label>
               <input type="date" className="w-full p-2 border rounded" />
             </div>
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
-                Link to Certificate
+                <strong>Link to Certificate</strong>
               </label>
               <input
                 type="text"
@@ -100,7 +100,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
-                Link to Projects
+                <strong>Link to Projects</strong>
               </label>
               <input
                 type="text"
@@ -111,7 +111,7 @@ const MainCertComponent: React.FC<Props> = (props: Props) => {
 
             <div className="mb-4">
               <label className="block text-recBody mb-2">
-                Upload Image/PDF of Certificate
+                <strong>Upload Image/PDF of Certificate</strong>
               </label>
               <input
                 type="text"

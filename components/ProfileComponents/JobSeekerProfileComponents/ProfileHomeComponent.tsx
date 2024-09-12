@@ -4,6 +4,8 @@ import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import MainProfileComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/MainProfileComponent';
 import MainCertComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/MainCertComponent';
+import MainExperienceComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/MainExperienceComponents';
+import MainEducationComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/MainEducationComponents'; 
 import JobSeekerProfileComponent from './JobSeekerProfileComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 
@@ -60,8 +62,8 @@ const ProfileHomeComponent = (props: Props) => {
             <TabsContent value="cert">
               <MainCertComponent />
             </TabsContent>
-            <TabsContent value="experience">Experience</TabsContent>
-            <TabsContent value="education">Education</TabsContent>
+            <TabsContent value="experience"><MainExperienceComponent /></TabsContent>
+            <TabsContent value="education"> <MainEducationComponent /></TabsContent>
           </Tabs>
         </div>
       )}

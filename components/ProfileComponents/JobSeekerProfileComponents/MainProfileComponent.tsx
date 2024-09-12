@@ -17,7 +17,7 @@ const MainProfileComponent = () => {
           {/* Right Column: Input Fields */}
           <div className="md:w-2/3">
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Your Name</label>
+              <label className="block text-recBody mb-2"><strong>Your Name</strong></label>
               <input
                 type="text"
                 className="w-full md:w-2/2 md:ml-auto p-2 border rounded"
@@ -27,7 +27,7 @@ const MainProfileComponent = () => {
 
             <div className="flex space-x-4 mb-4">
               <div className="w-1/2">
-                <label className="block text-recBody mb-2">Title</label>
+                <label className="block text-recBody mb-2"><strong>Title</strong></label>
                 <input
                   type="text"
                   className="w-full md:w-full p-2 border rounded"
@@ -40,7 +40,7 @@ const MainProfileComponent = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Gender Pronouns</label>
+              <label className="block text-recBody mb-2"><strong>Gender Pronouns</strong></label>
               <input
                 type="text"
                 className="w-full md:w-2/2 md:ml-auto p-2 border rounded"
@@ -49,7 +49,7 @@ const MainProfileComponent = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Location</label>
+              <label className="block text-recBody mb-2"><strong>Location</strong></label>
               <input
                 type="text"
                 className="w-full md:w-2/2 md:ml-auto p-2 border rounded"
@@ -58,7 +58,7 @@ const MainProfileComponent = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-recBody mb-2">Your Role(s)</label>
+              <label className="block text-recBody mb-2"><strong>Your Role(s)</strong></label>
               <input
                 type="text"
                 className="w-full md:w-2/2 md:ml-auto p-2 border rounded"
@@ -67,7 +67,7 @@ const MainProfileComponent = () => {
             </div>
 
             <div className="mb-4 relative">
-              <label className="block text-recBody mb-2">Experience</label>
+              <label className="block text-recBody mb-2"><strong>Experience</strong></label>
               <div className="relative">
                 <select className="w-full md:w-2/2 md:ml-auto p-2 border rounded appearance-none">
                   <option value="" disabled hidden>
@@ -98,7 +98,7 @@ const MainProfileComponent = () => {
             </div>
 
             <div>
-              <label className="block text-recBody mb-2">Work Preference</label>
+              <label className="block text-recBody mb-2"><strong> Work Preference</strong></label>
               <input
                 type="text"
                 className="w-full md:ml-auto p-2 border rounded"
@@ -109,22 +109,21 @@ const MainProfileComponent = () => {
         </div>
 
         {/* Bio Section */}
-        <div className="mt-4 flex md:flex-row">
-          <div className="hidden md:w-1/3"></div>
-          <div className="w-full md:w-2/3">
-            <label className="block text-recBody mb-2">Bio</label>
+        <div className="grid grid-cols-1 gap-4 mt-4 md:ml-auto md:w-2/3">
+          <div>
+            <label className="block text-recBody mb-2"><strong>Bio</strong></label>
             <textarea
               className="w-full md:w-full md:ml-auto p-2 mb-7 border rounded"
               placeholder="Tell us about yourself, your experience, what you do etc"
               rows={4}
             ></textarea>
           </div>
-        </div>
+          </div>
 
         {/* Links Section */}
         <div className="grid grid-cols-1 gap-4 mt-4 md:ml-auto md:w-2/3">
           <div>
-            <label className="block text-recBody mb-2">Link to Portfolio</label>
+            <label className="block text-recBody mb-2"><strong>Link to Portfolio</strong></label>
             <input
               type="text"
               className="w-full p-2 border rounded"
@@ -133,7 +132,7 @@ const MainProfileComponent = () => {
           </div>
           <div>
             <label className="block text-recBody mb-2">
-              Upload your Resume
+              <strong>Upload your Resume</strong>
             </label>
             <div className="relative">
               <input
@@ -147,7 +146,7 @@ const MainProfileComponent = () => {
             </div>
           </div>
           <div>
-            <label className="block text-recBody mb-2">LinkedIn Handle</label>
+            <label className="block text-recBody mb-2"><strong>LinkedIn Handle</strong></label>
             <input
               type="text"
               className="w-full p-2 border rounded"
@@ -155,7 +154,7 @@ const MainProfileComponent = () => {
             />
           </div>
           <div>
-            <label className="block text-recBody mb-2">GitHub</label>
+            <label className="block text-recBody mb-2"><strong>GitHub</strong></label>
             <input
               type="text"
               className="w-full p-2 border rounded"
@@ -163,7 +162,7 @@ const MainProfileComponent = () => {
             />
           </div>
           <div>
-            <label className="block text-recBody mb-2">Facebook</label>
+            <label className="block text-recBody mb-2"><strong>Facebook</strong></label>
             <input
               type="text"
               className="w-full p-2 border rounded"
