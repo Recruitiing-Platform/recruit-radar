@@ -9,6 +9,7 @@ import { appliedJobData, profileDetailData } from "@/data";
 import ProfileDetailComponent from "./ProfileDetailComponent";
 import EmptyJobComponent from "./EmptyJobComponent";
 import OccupiedJobComponent from "./OccupiedJobComponent";
+import { FaSuitcase } from "react-icons/fa";
 const AppliedJobComponent = () => {
   const { handleShowProfile, rRUser } = useRecruitRadarHook();
   const [progress, setProgress] = useState<number>(10);
@@ -37,10 +38,10 @@ const AppliedJobComponent = () => {
 
   return (
     <>
-      <div className="md:p-5 lg:p-10 flex justify-between gap-4">
+      <div className="p-5 md:p-10 flex justify-between gap-4">
         <div className="w-full lg:w-[80%]">
           <div className="flex justify-between border border-recSubtle/20 rounded-3xl px-5 pt-5 pb-14 mb-9">
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
               <div className="relative">
                 <div className="relative">
                   <Avatar className="w-36 h-36">
@@ -53,7 +54,7 @@ const AppliedJobComponent = () => {
                     />
                     <AvatarFallback>{avatarPicFallback}</AvatarFallback>
                   </Avatar>
-                  <div className="absolute top-0 right-0 left-0 bottom-0 bg-[#000]/30 rounded-full"></div>
+                  <div className="absolute top-0 right-0 left-0 bottom-0 w-fit bg-[#000]/30 rounded-full"></div>
                 </div>
                 <input
                   type="file"
@@ -63,14 +64,14 @@ const AppliedJobComponent = () => {
                   onChange={handleFileChange}
                 />
                 <span
-                  className="absolute bottom-7 right-7 z-10 block cursor-pointer"
+                  className="absolute bottom-7 right-14 md:right-7 z-10 block cursor-pointer"
                   onClick={handleCameraClick}
                 >
                   <Camera className="text-recLightGrey" />
                 </span>
               </div>
               <div className="pt-3">
-                <h1 className="text-headerFour pb-4 font-recSemiBold">
+                <h1 className="text-headerSix md:text-headerFour pb-4 font-recSemiBold">
                   {rRUser?.displayName}
                 </h1>
                 <p className="text-sm font-recMedium">
@@ -115,18 +116,13 @@ const AppliedJobComponent = () => {
         </div>
       </div>
       <div className="flex bg-recPrimary px-2 w-full lg:w-[94%] mx-auto justify-between">
-        <div className="text-[black] font-recBold px-16 flex">
-          <Image
-            src="/suitcase.svg"
-            alt="suitcase icon"
-            width={50}
-            height={20}
-          />
-          <div className="py-4">Job Application</div>
+        <div className="font-recBold px-3 md:px-16 flex items-center gap-3">
+          <FaSuitcase size={24} />
+          <span className="py-4 text-textSmall md:text-[16px]">Job Application</span>
         </div>
-        <div className="text-[black] font-recRegular px-14 py-4">Status 2</div>
+        <div className="font-recRegular text-textSmall md:text-[16px] pr-3 md:px-14 py-4">Status 2</div>
       </div>
-      <h1 className="text-center text-[black] mt-10 font-recSemiBold">
+      <h1 className="text-center mt-10 font-recSemiBold">
         Check Applied jobs
       </h1>
       <div className="border-2 mt-10 rounded-md lg:w-[94%] mx-auto min-h-[50%] mb-60">
