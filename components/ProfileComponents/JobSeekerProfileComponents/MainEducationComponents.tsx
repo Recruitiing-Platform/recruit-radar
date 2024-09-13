@@ -27,7 +27,7 @@ const MainEducationComponent: React.FC<Props> = (props: Props) => {
       <form className="bg-white rounded shadow-md">
         <div className="flex flex-col md:flex-row">
           {/* Left Column: Text */}
-          <div className="md:w-1/3">
+          <div className="hidden md:block md:w-1/3">
             <p className="text-recBody mb-4">
               You can show off all the certification you have obtained here
             </p>
@@ -204,50 +204,91 @@ const MainEducationComponent: React.FC<Props> = (props: Props) => {
   </div>
 </div>
 
-            <div className="mb-4">
+<div className="mb-4">
   <label className="block text-recBody mb-2"><strong>End Date</strong></label>
-  <div className="relative flex items-center">
+  <div className="relative flex flex-col md:flex-row items-start md:items-center">
     <DatePicker
       selected={endDate}
       onChange={handleEndDateChange}
       className="w-full p-2 border rounded"
       placeholderText="Select end date"
     />
-    <AiOutlineCalendar className="absolute right-3 top-3 text-gray-400" />
-    <div className="flex items-center ml-10">
+    <AiOutlineCalendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+    
+    {/* Wrap the checkbox and label in a container */}
+    <div className="flex items-center mt-2 md:mt-0 md:ml-10">
       <input
         type="checkbox"
         className="mr-2"
         checked={currentlyWorking}
         onChange={(e) => setCurrentlyWorking(e.target.checked)}
       />
-      <label className="text-recBody"><strong>Currently Schooling here</strong></label>
+      <label className="text-recBody"><strong>Currently schooling here</strong></label>
     </div>
   </div>
 </div>
 
 
-            <div className="flex flex-wrap justify-end mt-4 pb-5 gap-5 md:space-x-4">
-              <button
-                type="button"
-                className="border border-recPrimary text-recPrimary px-4 py-2 rounded"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="bg-recPrimary text-recLight px-4 py-2 rounded"
-              >
-                Save
-              </button>
-              <button
-                type="button"
-                className="bg-recPrimary text-recLight px-4 py-2 rounded"
-              >
-                Save and add another
-              </button>
-            </div>
-          </div>
+
+             {/* For Laptop View */}
+  <div className="hidden md:flex flex-wrap justify-end gap-3">
+    <button
+      type="button"
+      className="border border-recPrimary text-recPrimary px-4 py-2 rounded"
+      style={{
+        borderColor: "#FF6347", // recPrimary (example: tomato color)
+        color: "#FF6347", // recPrimary
+      }}
+    >
+      Cancel
+    </button>
+    <button
+      type="submit"
+      className="bg-recPrimary text-recLight px-4 py-2 rounded"
+      style={{
+        backgroundColor: "#FF6347", // recPrimary
+        color: "#ffffff", // recLight
+      }}
+    >
+      Save
+    </button>
+    <button
+      type="button"
+      className="bg-recPrimary text-recLight px-4 py-2 rounded"
+      style={{
+        backgroundColor: "#FF6347", // recPrimary
+        color: "#ffffff", // recLight
+      }}
+    >
+      Save and add another
+    </button>
+  </div>
+
+  {/* For Mobile View */}
+  <div className="flex flex-wrap justify-center md:hidden gap-3">
+    <button
+      type="button"
+      className="btn btn-outline-danger px-4 py-2 rounded border border-recPrimary"
+      style={{
+        borderColor: "#FF6347", // recPrimary
+        color: "#FF6347", // recPrimary
+      }}
+    >
+      Edit
+    </button>
+    <button
+      type="submit"
+      className="btn btn-danger px-4 py-2 rounded"
+      style={{
+        backgroundColor: "#FF6347", // recPrimary
+        color: "#ffffff", // recLight
+      }}
+    >
+      Save
+    </button>
+  </div>
+</div>
+
         </div>
       </form>
     </div>
