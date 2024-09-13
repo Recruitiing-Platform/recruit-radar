@@ -485,6 +485,99 @@ export const jobAlertData: Array<JobAlerts> = [
   },
 ];
 
+export const employerJobsData: Array<any> = [
+  {
+    job: {
+      jobTitle: "Technical Support Specialist",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "5 days rem.",
+    },
+    status: "Active",
+    applications: 748
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "27 days rem.",
+    },
+    status: "Expired",
+    applications: 650
+  },
+  {
+    job: {
+      jobTitle: "Software Engineer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "4 days rem.",
+    },
+    status: "Expired",
+    applications: 845
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "30 days rem.",
+    },
+    status: "Expired",
+    applications: 233
+  },
+  {
+    job: {
+      jobTitle: "Product Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "10 days rem.",
+    },
+    status: "Expired",
+    applications: 798
+  },
+  {
+    job: {
+      jobTitle: "UI/UX Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "2 days rem.",
+    },
+    status: "Active",
+    applications: 798
+  },
+  {
+    job: {
+      jobTitle: "Visual Designer",
+      jobLocation: "Remote",
+      jobType: "Full time",
+      daysRem: "35 days rem.",
+    },
+    status: "Expired",
+    applications: 798
+  },
+  {
+    job: {
+      jobTitle: "Interaction Designer",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "17 days rem.",
+    },
+    status: "Expired",
+    applications: 798
+  },
+  {
+    job: {
+      jobTitle: "Project Manager",
+      jobLocation: "On-site",
+      jobType: "Full time",
+      daysRem: "23 days rem.",
+    },
+    status: "Expired",
+    applications: 975
+  },
+]
+
 export const savedJobsData: Array<any> = [
   {
     job: {
@@ -652,6 +745,7 @@ export const barItems: Array<any> = [
     progress: 50,
   },
 ];
+
 export const appliedJobData: Array<AppliedJobDataInterface> = [
   {
     jobTitle: "Software Engineer",
@@ -699,3 +793,5 @@ export const appliedJobData: Array<AppliedJobDataInterface> = [
     location: "Austin, TX",
   },
 ];
+
+export const benefitsWords: Array<string> = ['401k Salary', 'Distributed Team', 'Async', 'Vision Insurance', 'Dental Insurance', 'Medical Insurance', 'Unlimited Vacation', '4 day workweek', '401k matching', 'Company Retreats', 'Free gym membership', 'Equity Compensation', 'No whiteboard interview', 'We hire old and young']
