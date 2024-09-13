@@ -50,7 +50,7 @@ const DecisionPage = () => {
   };
 
   return (
-    <div className="flex h-fit pb-10 md:pb-0 md:h-screen">
+    <div className="flex h-screen md:pb-0 md:h-screen">
       <LeftSideSignUpComponent />
       <div className="bg-[#FFFFFF] h-full w-full lg:w-1/2 flex flex-col items-center justify-center">
         {mainDecision && (
