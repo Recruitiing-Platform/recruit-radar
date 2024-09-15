@@ -6,6 +6,8 @@ import MainProfileComponent from '@/components/ProfileComponents/JobSeekerProfil
 import MainCertComponent from '@/components/ProfileComponents/JobSeekerProfileComponents/MainCertComponent';
 import JobSeekerProfileComponent from './JobSeekerProfileComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
+import MainExperienceComponent from './MainExperienceComponent';
+import MainEducationComponent from './MainEducationComponent';
 
 type Props = {};
 
@@ -60,8 +62,12 @@ const ProfileHomeComponent = (props: Props) => {
             <TabsContent value="cert">
               <MainCertComponent />
             </TabsContent>
-            <TabsContent value="experience">Experience</TabsContent>
-            <TabsContent value="education">Education</TabsContent>
+            <TabsContent value="experience">
+              <MainExperienceComponent />
+            </TabsContent>
+            <TabsContent value="education">
+              <MainEducationComponent />
+            </TabsContent>
           </Tabs>
         </div>
       )}
