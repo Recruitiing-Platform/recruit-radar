@@ -35,7 +35,7 @@ const MainProfileComponent = () => {
                 />
               </div>
               <div className="w-1/2">
-                <DateInput />
+                <DateInput dateLabel="Date of Birth" className='w-full md:w-full p-2 border rounded' />
               </div>
             </div>
 

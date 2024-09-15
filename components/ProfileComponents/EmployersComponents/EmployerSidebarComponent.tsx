@@ -17,6 +17,7 @@ import EmployerProfileComponent from './EmployerProfileComponent';
 import EmployerJobPostComponent from './EmployerJobPostComponent';
 import EmployerJobComponent from './EmployerJobComponent';
 import EmployerNotificationComponent from './EmployerNotificationComponent';
+import EmployerSettingsComponent from './EmployerSettingsComponent';
 
 const EmployerSideBarComponent = () => {
   const {
@@ -215,7 +216,7 @@ const EmployerSideBarComponent = () => {
           {jobPosts && <EmployerJobPostComponent />}
           {employerJobs && <EmployerJobComponent />}
           {employerNotification && <EmployerNotificationComponent />}
-          {employerSettings && <EmployerProfileComponent />}
+          {employerSettings && <EmployerSettingsComponent />}
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>

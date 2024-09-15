@@ -3,8 +3,9 @@ import { Button } from '@/components/ui/button';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import { Link } from 'lucide-react';
 import { useRef, useState } from 'react';
+import DateInput from '../JobSeekerProfileComponents/DateInputComponent';
 
-const SettingsProfileTabComponent = () => {
+const SettingsCompanyInfoTab = () => {
   const { rRUser } = useRecruitRadarHook();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -33,7 +34,7 @@ const SettingsProfileTabComponent = () => {
 
   return (
     <div>
-      <h3 className="text-textSmall font-recSemiBold pb-4">Your photo</h3>
+      <h3 className="text-textSmall font-recSemiBold pb-4">Logo Image</h3>
       <div className="flex md:items-center flex-col md:flex-row gap-5 pb-20">
         <Avatar className="w-36 h-36 border-2 border-recPrimary">
           <AvatarImage
@@ -66,17 +67,17 @@ const SettingsProfileTabComponent = () => {
         <div className="flex items-center flex-col md:flex-row w-full gap-6">
           <div className="w-full">
             <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-              Username
+              Company Name
             </label>
             <input
               type="text"
               className="w-full px-2.5 py-3 border rounded"
-              placeholder="Enter username"
+              placeholder="Enter company name"
             />
           </div>
           <div className="w-full">
             <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-              Pronouns
+              Organization Type
             </label>
             <select className="w-full px-2.5 py-3 border rounded">
               <option>Select</option>
@@ -87,17 +88,7 @@ const SettingsProfileTabComponent = () => {
         <div className="flex items-center flex-col md:flex-row w-full gap-6">
           <div className="w-full">
             <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-              Your job title
-            </label>
-            <input
-              type="text"
-              className="w-full px-2.5 py-3 border rounded"
-              placeholder="Enter job title"
-            />
-          </div>
-          <div className="w-full">
-            <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-              Industry
+              Industry Type
             </label>
             <input
               type="text"
@@ -105,25 +96,40 @@ const SettingsProfileTabComponent = () => {
               placeholder="Enter industry or profession"
             />
           </div>
+          <div className="w-full">
+            <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
+              Team Size
+            </label>
+            <input
+              type="text"
+              className="w-full px-2.5 py-3 border rounded"
+              placeholder="Enter team size"
+            />
+          </div>
+        </div>
+        <div className="flex items-center flex-col md:flex-row w-full gap-6">
+          <div className="w-full">
+            <DateInput dateLabel='Year of establishment' className='w-full md:w-full p-2.5 border rounded' />
+          </div>
+          <div className="w-full">
+            <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
+              Company Website
+            </label>
+            <input
+              type="text"
+              className="w-full px-2.5 py-3 border rounded"
+              placeholder="Website URL"
+            />
+          </div>
         </div>
         <div>
           <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-            Your email address
-          </label>
-          <input
-            type="text"
-            className="w-full px-2.5 py-3 border rounded"
-            placeholder="Enter email address"
-          />
-        </div>
-        <div>
-          <label className="block text-recBody mb-2 text-textSmall font-recSemiBold">
-            Bio
+          About the Company
           </label>
           <textarea
             rows={4}
             className="w-full px-2.5 py-3 border rounded"
-            placeholder="Type your message here"
+            placeholder="Write down about your company here. Let the candidate know who you are"
           />
           <span className="text-textSmall text-recSubtle">
             Maximum of 64 characters
@@ -164,4 +170,4 @@ const SettingsProfileTabComponent = () => {
   );
 };
 
-export default SettingsProfileTabComponent;
+export default SettingsCompanyInfoTab;
