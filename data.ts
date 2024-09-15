@@ -9,7 +9,7 @@ import { ChooseDataInterface } from "./interfaces/HomepageInterface";
 import { JobDataInterface } from "./interfaces/HomepageInterface";
 import { LinkDataInterface } from "./interfaces/HomepageInterface";
 import { NavDataInterface } from "./interfaces/HomepageInterface";
-import { AppliedJobDataInterface, JobAlerts, ProfileDataInterface } from "./interfaces/ProfileInterface";
+import { AppliedJobDataInterface, JobAlerts, ProfileDataInterface, EmployerNotification } from "./interfaces/ProfileInterface";
 
 export const navData: Array<NavDataInterface> = [
   {
@@ -795,3 +795,54 @@ export const appliedJobData: Array<AppliedJobDataInterface> = [
 ];
 
 export const benefitsWords: Array<string> = ['401k Salary', 'Distributed Team', 'Async', 'Vision Insurance', 'Dental Insurance', 'Medical Insurance', 'Unlimited Vacation', '4 day workweek', '401k matching', 'Company Retreats', 'Free gym membership', 'Equity Compensation', 'No whiteboard interview', 'We hire old and young']
+
+export const profiles: EmployerNotification[] = [
+  {
+    imageUrl: "/michelle.png",
+    name: "Michelle Brunos",
+    title: "Product Designer",
+    experience: "5 years Experience",
+    education: "Bachelors Degree (BSc)",
+    dateApplied: "March 4, 2024",
+  },
+  {
+    imageUrl: "/brunos.png",
+    name: "Michelle Brunos",
+    title: "Project Manager",
+    experience: "5 years Experience",
+    education: "Intermediate Degree",
+    dateApplied: "March 4, 2024",
+  },
+  {
+    imageUrl: "/michelle.png",
+    name: "Alex Brown",
+    title: "UI/UX Designer",
+    experience: "5 years  Experience",
+    education: "Masters Degree (MSc)",
+    dateApplied: "March 4, 2024",
+  },
+  {
+    imageUrl: "/brunos.png",
+    name: "Sara Green",
+    title: "Frontend Developer",
+    experience: " 5 years Experience",
+    education: "Masters Degree (MSc)",
+    dateApplied: "March 4, 2024",
+  },
+  {
+    imageUrl: "/michelle.png",
+    name: "Mike Blue",
+    title: "Backend Developer",
+    experience: " 5 years Experience",
+    education: "Intermediate Degree",
+    dateApplied: "March 4, 2024",
+  },
+  {
+    imageUrl: "/brunos.png",
+    name: "Emma White",
+    title: "Data Scientist",
+    experience: " 5 years Experience",
+    education: "Bachelors Degree (BSc)",
+    dateApplied: "March 4, 2024",
+  },
+];

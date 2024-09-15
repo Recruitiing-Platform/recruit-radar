@@ -24,3 +24,14 @@ export interface JobAlerts {
   about: string;
   dayPosted: string;
 }
+
+export interface EmployerNotification {
+
+  imageUrl: string;
+  name: string;
+  title: string;
+  experience: string;
+  education: string;
+  dateApplied: string;
+
+}
