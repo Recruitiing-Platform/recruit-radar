@@ -30,14 +30,14 @@ const EmployerNotificationComponent = (props: Props) => {
         </div>
         <Switch />
       </div>
-      <div className="bg-recLightGrey h-fit py-8 rounded-md">
-        <div className="flex justify-between">
-          <div className="px-4">All Application (64)</div>
+      <div className="bg-recLightGrey dark:bg-[#000611]  h-fit py-8 rounded-md">
+        <div className="flex justify-between sm:py-4">
+          <div className="px-4 ">All Application (64)</div>
           <a href="" className="px-4">
             View all
           </a>
         </div>
-        <div className=" my-8 px-4  grid lg:grid-cols-3 grid-col-1 gap-4">
+        <div className=" lg:my-8 lg:px-4  grid lg:grid-cols-3 grid-col-1 gap-4">
           {profiles.map((t, card) => (
             <div className="" key={card}>
               <ProfileCardComponent profile={t} />
@@ -46,7 +46,7 @@ const EmployerNotificationComponent = (props: Props) => {
         </div>
       </div>
       <section>
-        <div className="bg-recLightGrey h-fit py-8 rounded-md">
+        <div className="bg-recLightGrey dark:bg-[#000611] shadow-lg  h-fit py-8 rounded-md">
           <div className="flex justify-between">
             <div className="px-4">Shortlisted(12)</div>
             <a href="" className="px-4">

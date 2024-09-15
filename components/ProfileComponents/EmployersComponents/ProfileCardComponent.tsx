@@ -8,7 +8,7 @@ type Props = {
 function ProfileCardComponent({ profile }: Props) {
   return (
     <>
-      <div className="bg-recLight  rounded-md p-3 h-[250px]">
+      <div className="bg-recLight dark:bg-recDark shadow-lg rounded-md p-3 h-[250px]">
         <div className="flex gap-4">
           <Image
             src={profile.imageUrl}
@@ -22,7 +22,7 @@ function ProfileCardComponent({ profile }: Props) {
           </div>
         </div>
         <hr className="my-4"></hr>
-        <div className="text-textSmall">
+        <div className="lg:text-textSmall text-[12px]">
           <li>{profile.experience}</li>
           <li>Education: {profile.education}</li>
           <li>Applied: {profile.dateApplied}</li>
@@ -32,7 +32,7 @@ function ProfileCardComponent({ profile }: Props) {
           <a
             href="/cv.pdf"
             download="My_CV.pdf"
-            className="font-recBold text-recError text-textSmall"
+            className="font-recBold text-recPrimary text-textSmall"
           >
             Download CV
           </a>
