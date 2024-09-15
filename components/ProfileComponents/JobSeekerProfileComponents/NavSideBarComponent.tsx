@@ -4,6 +4,8 @@ import MainProfileComponent from './MainProfileComponent';
 import MainCertComponent from './MainCertComponent';
 import { useRecruitRadarHook } from '@/hooks/useRecruitRadarHook';
 import NavJobSeekerProfileComponent from './NavJobSeekerProfileComponent';
+import MainExperienceComponent from './MainExperienceComponent';
+import MainEducationComponent from './MainEducationComponent';
 
 type Props = {};
 
@@ -31,7 +33,7 @@ const NavSideBarComponent = (props: Props) => {
             onValueChange={(value: string) => setActiveTab(value)}
             className=""
           >
-            <TabsList className="grid w-full grid-cols-2 mb-12">
+            <TabsList className="grid w-full grid-cols-2 mb-12 bg-recLight dark:bg-[#000611]">
               <TabsTrigger value="profile" className="flex-col">
                 Profile{' '}
                 {activeTab === 'profile' && (
@@ -63,8 +65,12 @@ const NavSideBarComponent = (props: Props) => {
             <TabsContent value="cert">
               <MainCertComponent />
             </TabsContent>
-            <TabsContent value="experience">Experience</TabsContent>
-            <TabsContent value="education">Education</TabsContent>
+            <TabsContent value="experience">
+              <MainExperienceComponent />
+            </TabsContent>
+            <TabsContent value="education">
+              <MainEducationComponent />
+            </TabsContent>
           </Tabs>
         </div>
       )}
