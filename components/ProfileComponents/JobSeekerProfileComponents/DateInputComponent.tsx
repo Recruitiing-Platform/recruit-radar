@@ -1,6 +1,11 @@
 import { ChangeEvent } from 'react';
 
-const DateInput: React.FC = () => {
+type Props = {
+  dateLabel: string;
+  className?: string
+}
+
+const DateInput = (props: Props) => {
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {};
 
   const formatDate = (date: string): string => {
@@ -10,10 +15,10 @@ const DateInput: React.FC = () => {
 
   return (
     <div className="w-full">
-      <label className="block text-recBody mb-2">Date of Birth</label>
+      <label className="block text-recBody mb-2">{props.dateLabel}</label>
       <input
         type="date"
-        className="w-full md:w-full p-2 border rounded"
+        className={props.className}
         onChange={handleDateChange}
       />
       <div className="mt-2 text-recBody"></div>

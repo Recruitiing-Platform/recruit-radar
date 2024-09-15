@@ -26,7 +26,7 @@ const SettingsPasswordTabComponent = () => {
           <label className="block text-recBody mb-2 font-recMedium">
             Current Password
           </label>
-          <div className="w-full bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
+          <div className="w-full dark:bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
             <input
               type={passwordVisible ? "text" : "password"}
               placeholder="Enter current password"
@@ -39,7 +39,7 @@ const SettingsPasswordTabComponent = () => {
           <label className="block text-recBody mb-2 font-recMedium">
             New Password
           </label>
-          <div className="w-full bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
+          <div className="w-full dark:bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
             <input
               type={newPasswordVisible ? "text" : "password"}
               placeholder="Enter new password"
@@ -52,7 +52,7 @@ const SettingsPasswordTabComponent = () => {
           <label className="block text-recBody mb-2 font-recMedium">
             Confirm New Password
           </label>
-          <div className="w-full bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
+          <div className="w-full dark:bg-[#0E0E0E] flex items-center gap-1 border rounded px-2.5">
             <input
               type={confirmPasswordVisible ? "text" : "password"}
               placeholder="Confirm new password"
